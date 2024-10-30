@@ -47,8 +47,7 @@
               "ToolTip": "C:\\Users\\wan19\\AppData\\Roaming\\Microsoft\\UserSecrets\\0aa0db5e-69e7-4d7e-9adb-674a20359afb\\secrets.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-20T06:58:44.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-20T06:58:44.417Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "ContactSMS.WebAPI\\Constants\\PolicyContstants.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T06:44:27.627Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-20T06:44:27.627Z"
             },
             {
               "$type": "Document",
@@ -71,7 +69,7 @@
               "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Controllers\\UserController.cs",
               "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\UserController.cs",
               "RelativeToolTip": "ContactSMS.WebAPI\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAIwC4AAAAAAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T06:14:48.926Z",
               "EditorCaption": ""
@@ -86,8 +84,7 @@
               "RelativeToolTip": "ContactSMS.WebAPI\\Program.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAABsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T06:04:17.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-20T06:04:17.149Z"
             },
             {
               "$type": "Document",
@@ -99,8 +96,7 @@
               "RelativeToolTip": "ContactSMS.WebAPI\\Controllers\\AuthenticationController.cs",
               "ViewState": "AQIAAEEAAAAAAAAAAAAAAFYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T02:41:03.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-20T02:41:03.612Z"
             }
           ]
         }
