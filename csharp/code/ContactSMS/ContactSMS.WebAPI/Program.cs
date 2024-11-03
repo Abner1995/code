@@ -1,6 +1,7 @@
 using ContactSMS.WebAPI.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,51 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(opts =>
+{
+    var title = "API版本";
+    var desc = "API版本";
+    var terms = new Uri("http://localhost:5220");
+    var license = new OpenApiLicense()
+    {
+        Name = "许可证"
+    };
+    var contact = new OpenApiContact()
+    {
+        Name = "xuzizheng",
+        Email = "wan19950504@gmail.com",
+        Url = terms,
+    };
+    opts.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = $"{title} v1(deprecated)",
+        Description = desc,
+        TermsOfService = terms,
+        License = license,
+        Contact = contact
+    });
+    opts.SwaggerDoc("v2", new OpenApiInfo
+    {
+        Version = "v2",
+        Title = $"{title} v2",
+        Description = desc,
+        TermsOfService = terms,
+        License = license,
+        Contact = contact
+    });
+});
+builder.Services.AddApiVersioning(opts =>
+{
+    opts.AssumeDefaultVersionWhenUnspecified = true;
+    opts.DefaultApiVersion = new(1, 0);
+    opts.ReportApiVersions = true;
+}).AddApiExplorer(opts =>
+{
+    opts.GroupNameFormat = "'v'VVV";
+    opts.SubstituteApiVersionInUrl = true;
+});
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy(PolicyContstants.MustHaveEmployeeId, policy =>
@@ -45,7 +90,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(opts =>
+    {
+        opts.SwaggerEndpoint("/swagger/v2/swagger.json", "v2");
+        opts.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    });
 }
 
 app.UseHttpsRedirection();

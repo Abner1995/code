@@ -3,23 +3,20 @@
   "WorkspaceRootPath": "D:\\code\\csharp\\code\\ContactSMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|d:\\code\\csharp\\code\\contactsms\\contactsms.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|solutionrelative:contactsms.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|d:\\code\\csharp\\code\\contactsms\\contactsms.webapi\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|solutionrelative:contactsms.webapi\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|d:\\code\\csharp\\code\\contactsms\\contactsms.webapi\\controllers\\v2\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|solutionrelative:contactsms.webapi\\controllers\\v2\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|d:\\code\\csharp\\code\\contactsms\\contactsms.webapi\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|solutionrelative:contactsms.webapi\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|d:\\code\\csharp\\code\\contactsms\\contactsms.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|solutionrelative:contactsms.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|d:\\code\\csharp\\code\\contactsms\\contactsms.webapi\\constants\\policycontstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|solutionrelative:contactsms.webapi\\constants\\policycontstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|d:\\code\\csharp\\code\\contactsms\\contactsms.webapi\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27015CD5-73B0-4550-A390-1ADC61146EAB}|ContactSMS.WebAPI\\ContactSMS.WebAPI.csproj|solutionrelative:contactsms.webapi\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\wan19\\AppData\\Roaming\\Microsoft\\UserSecrets\\0aa0db5e-69e7-4d7e-9adb-674a20359afb\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,62 +38,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\wan19\\AppData\\Roaming\\Microsoft\\UserSecrets\\0aa0db5e-69e7-4d7e-9adb-674a20359afb\\secrets.json",
-              "ToolTip": "C:\\Users\\wan19\\AppData\\Roaming\\Microsoft\\UserSecrets\\0aa0db5e-69e7-4d7e-9adb-674a20359afb\\secrets.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-20T06:58:44.417Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PolicyContstants.cs",
-              "DocumentMoniker": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Constants\\PolicyContstants.cs",
-              "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Constants\\PolicyContstants.cs",
-              "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Constants\\PolicyContstants.cs",
-              "RelativeToolTip": "ContactSMS.WebAPI\\Constants\\PolicyContstants.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T06:44:27.627Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "ContactSMS.WebAPI\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Title": "HealthController.cs",
+              "DocumentMoniker": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\HealthController.cs",
+              "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Controllers\\HealthController.cs",
+              "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\HealthController.cs",
+              "RelativeToolTip": "ContactSMS.WebAPI\\Controllers\\HealthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T06:14:48.926Z",
+              "WhenOpened": "2024-11-03T07:13:02.244Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\v2\\UserController.cs",
+              "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Controllers\\v2\\UserController.cs",
+              "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\v2\\UserController.cs",
+              "RelativeToolTip": "ContactSMS.WebAPI\\Controllers\\v2\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T06:44:25.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\v1\\UserController.cs",
+              "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Controllers\\v1\\UserController.cs",
+              "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\v1\\UserController.cs",
+              "RelativeToolTip": "ContactSMS.WebAPI\\Controllers\\v1\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T02:28:08.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Program.cs",
               "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Program.cs",
               "RelativeToolTip": "ContactSMS.WebAPI\\Program.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAABsAAAAAAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAIwB8AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T06:04:17.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "ContactSMS.WebAPI\\Controllers\\AuthenticationController.cs",
-              "ToolTip": "D:\\code\\csharp\\code\\ContactSMS\\ContactSMS.WebAPI\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "ContactSMS.WebAPI\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAFYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T02:41:03.612Z"
+              "WhenOpened": "2024-10-20T06:04:17.149Z",
+              "EditorCaption": ""
             }
           ]
         }

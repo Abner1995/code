@@ -4,11 +4,13 @@ using System.Text;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
+using Asp.Versioning;
 
-namespace ContactSMS.WebAPI.Controllers;
+namespace ContactSMS.WebAPI.Controllers.v1;
 
-[Route("api/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
 [ApiController]
+[ApiVersion(1.0)]
 public class AuthenticationController : ControllerBase
 {
     private readonly IConfiguration _configuration;
@@ -18,7 +20,7 @@ public class AuthenticationController : ControllerBase
 
     public AuthenticationController(IConfiguration configuration)
     {
-        this._configuration = configuration;
+        _configuration = configuration;
     }
 
     [HttpPost("token")]
@@ -37,7 +39,7 @@ public class AuthenticationController : ControllerBase
     private string GenerateToken(UserData user)
     {
         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-                this._configuration.GetSection("Authentication:SecretKey").Value!));
+                _configuration.GetSection("Authentication:SecretKey").Value!));
 
         var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha512Signature);
 
@@ -48,11 +50,11 @@ public class AuthenticationController : ControllerBase
         claims.Add(new("employeeId", user.EmployeeId));
 
         var token = new JwtSecurityToken(
-            this._configuration.GetSection("Authentication:Issuer").Value!,
-            this._configuration.GetSection("Authentication:Audience").Value!,
+            _configuration.GetSection("Authentication:Issuer").Value!,
+            _configuration.GetSection("Authentication:Audience").Value!,
             claims,
             DateTime.UtcNow,
-            DateTime.UtcNow.AddMinutes(1),
+            DateTime.UtcNow.AddMinutes(60),
             signingCredentials);
         return new JwtSecurityTokenHandler().WriteToken(token);
     }

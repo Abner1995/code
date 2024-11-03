@@ -1,20 +1,23 @@
-﻿using ContactSMS.WebAPI.Constants;
+﻿using Asp.Versioning;
+using ContactSMS.WebAPI.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ContactSMS.WebAPI.Controllers;
+namespace ContactSMS.WebAPI.Controllers.v1;
 
-[Route("api/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
 [ApiController]
+[ApiVersion(1.0)]
 public class UserController : ControllerBase
 {
     // GET: api/<UserController>
     [HttpGet]
+    [AllowAnonymous]
     public IEnumerable<string> Get()
     {
-        return new string[] { "value1", "value2" };
+        return new string[] { "1", "1" };
     }
 
     // GET api/<UserController>/5
