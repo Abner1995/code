@@ -12,11 +12,19 @@ namespace ContactSMS.WebAPI.Controllers.v1;
 [ApiVersion(1.0)]
 public class UserController : ControllerBase
 {
+    private readonly ILogger<UserController> logger;
+
+    public UserController(ILogger<UserController> logger)
+    {
+        this.logger = logger;
+    }
+
     // GET: api/<UserController>
     [HttpGet]
     [AllowAnonymous]
     public IEnumerable<string> Get()
     {
+        logger.LogInformation("日志");
         return new string[] { "1", "1" };
     }
 

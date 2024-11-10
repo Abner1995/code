@@ -364,5 +364,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-csharp/code/ContactSMS/.vs/ContactSMS/v17/.suo
-csharp/code/ContactSMS/.vs/ContactSMS/v17/DocumentLayout.json

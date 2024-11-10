@@ -1,5 +1,8 @@
 using ContactSMS.WebAPI.Constants;
+using ContactSMS.WebAPI.HealthCheck;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -9,6 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddHealthChecks()
+    .AddCheck<RandomHealthCheck>("网站检测");
+builder.Services.AddHealthChecksUI(opts =>
+{
+    opts.AddHealthCheckEndpoint("api", "health");
+    opts.SetEvaluationTimeInSeconds(5);
+    opts.SetMinimumSecondsBetweenFailureNotifications(10);
+}).AddInMemoryStorage();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opts =>
@@ -58,6 +69,10 @@ builder.Services.AddApiVersioning(opts =>
 
 builder.Services.AddAuthorization(options =>
 {
+    options.AddPolicy("HealthCheck", policy =>
+    {
+        policy.RequireAssertion(_ => true); // 允许所有访问
+    });
     options.AddPolicy(PolicyContstants.MustHaveEmployeeId, policy =>
     {
         policy.RequireClaim("employeeId");
@@ -102,5 +117,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+}).RequireAuthorization("HealthCheck");
+app.MapHealthChecksUI().RequireAuthorization("HealthCheck");
 
 app.Run();
