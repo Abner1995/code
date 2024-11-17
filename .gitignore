@@ -366,3 +366,5 @@ MigrationBackup/
 FodyWeavers.xsd
 csharp/code/ContactSMS/.vs/ContactSMS/v17/.suo
 csharp/code/ContactSMS/.vs/ContactSMS/v17/DocumentLayout.json
+csharp/code/ContactSMS/ContactSMS.WebAPI/watchlogs-log.db
+csharp/code/ContactSMS/ContactSMS.WebAPI/watchlogs.db

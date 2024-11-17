@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using ContactSMS.WebAPI.Constants;
+using ContactSMS.WebAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,8 +40,17 @@ public class UserController : ControllerBase
 
     // POST api/<UserController>
     [HttpPost]
-    public void Post([FromBody] string value)
+    [AllowAnonymous]
+    public IActionResult Post([FromBody] UserModel user)
     {
+        if (ModelState.IsValid)
+        {
+            return Ok("Ok");
+        }
+        else
+        {
+            return BadRequest(ModelState);
+        }
     }
 
     // PUT api/<UserController>/5
