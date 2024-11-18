@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{28DCE930-66B6-4A3B-8A53-3B772C9944AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSMS.WebAPI", "ContactSMS.WebAPI\ContactSMS.WebAPI.csproj", "{27015CD5-73B0-4550-A390-1ADC61146EAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.WebAPI", "ContactSMS.WebAPI\Learn.WebAPI.csproj", "{27015CD5-73B0-4550-A390-1ADC61146EAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
