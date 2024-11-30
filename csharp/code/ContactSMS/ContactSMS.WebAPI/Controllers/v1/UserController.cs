@@ -23,7 +23,7 @@ public class UserController : ControllerBase
     // GET: api/<UserController>
     [HttpGet]
     [AllowAnonymous]
-    [ResponseCache(Duration = 10)]
+    [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = false)]
     public IEnumerable<string> Get()
     {
         logger.LogInformation("日志");

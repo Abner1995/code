@@ -1,6 +1,8 @@
+using AspNetCoreRateLimit;
 using ContactSMS.WebAPI.Constants;
 using ContactSMS.WebAPI.HealthCheck;
 using HealthChecks.UI.Client;
+using Learn.WebAPI.StartupConfig;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
@@ -21,6 +23,10 @@ builder.Services.AddHealthChecksUI(opts =>
     opts.SetMinimumSecondsBetweenFailureNotifications(10);
 }).AddInMemoryStorage();
 builder.Services.AddResponseCaching();
+
+builder.Services.AddMemoryCache();
+builder.AddRateLimitServices();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opts =>
@@ -120,6 +126,8 @@ app.UseResponseCaching();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseIpRateLimiting();
 
 app.MapHealthChecks("/health", new HealthCheckOptions
 {
