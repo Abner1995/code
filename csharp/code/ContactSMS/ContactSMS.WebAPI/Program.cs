@@ -7,7 +7,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MySqlX.XDevAPI;
 using System.Text;
+using Ubiety.Dns.Core;
+using WatchDog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,7 @@ builder.Services.AddHealthChecksUI(opts =>
     opts.SetEvaluationTimeInSeconds(5);
     opts.SetMinimumSecondsBetweenFailureNotifications(10);
 }).AddInMemoryStorage();
+//builder.Services.AddWatchDogServices();
 builder.Services.AddResponseCaching();
 
 builder.Services.AddMemoryCache();
@@ -62,6 +66,30 @@ builder.Services.AddSwaggerGen(opts =>
         License = license,
         Contact = contact
     });
+    var securityScheme = new OpenApiSecurityScheme()
+    {
+        Name = "Authorization",
+        Description = "JWT Authorization Header info using bearer tokens",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT"
+    };
+    var securityRequirement = new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference{
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "bearerAuth"
+                }
+            },
+            new string[] {}
+        }
+    };
+    opts.AddSecurityDefinition("bearerAuth", securityScheme);
+    opts.AddSecurityRequirement(securityRequirement);
 });
 builder.Services.AddApiVersioning(opts =>
 {
@@ -108,6 +136,8 @@ builder.Services.AddAuthentication("Bearer")
 
 var app = builder.Build();
 
+//app.UseWatchDogExceptionLogger();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -134,5 +164,11 @@ app.MapHealthChecks("/health", new HealthCheckOptions
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 }).RequireAuthorization("HealthCheck");
 app.MapHealthChecksUI().RequireAuthorization("HealthCheck");
+
+//app.UseWatchDog(opt =>
+//{
+//    opt.WatchPageUsername = app.Configuration.GetValue<string>("WatchDog:UserName");
+//    opt.WatchPagePassword = app.Configuration.GetValue<string>("WatchDog:PassWord");
+//});
 
 app.Run();
