@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Application.Restaurants;
+using CleanArchitecture.Application.Restaurants.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.API.Controllers;
@@ -15,12 +16,19 @@ public class RestaurantsController(IRestaurantsService restaurantsService) : Con
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetId([FromRoute]int id)
+    public async Task<IActionResult> GetId([FromRoute] int id)
     {
         var restaurant = await restaurantsService.GetId(id);
         if (restaurant is null)
             return NotFound();
 
         return Ok(restaurant);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantDto createRestaurantDto)
+    {
+        int id = await restaurantsService.Create(createRestaurantDto);
+        return CreatedAtAction(nameof(GetId), new { id }, null);
     }
 }

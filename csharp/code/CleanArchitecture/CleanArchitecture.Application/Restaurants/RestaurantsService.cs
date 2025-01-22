@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Restaurants.Dtos;
+using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Repositories;
 using Microsoft.Extensions.Logging;
 
@@ -7,6 +8,14 @@ namespace CleanArchitecture.Application.Restaurants;
 
 internal class RestaurantsService(IRestaurantsRepository restaurantsRepository, ILogger<RestaurantsService> logger, IMapper mapper) : IRestaurantsService
 {
+    public async Task<int> Create(CreateRestaurantDto createRestaurantDto)
+    {
+        logger.LogInformation("新增餐馆");
+        var restaurant = mapper.Map<Restaurant>(createRestaurantDto);
+        int id = await restaurantsRepository.CreateAsync(restaurant);
+        return id;
+    }
+
     public async Task<IEnumerable<RestaurantDto>> GetAllRestaurants()
     {
         logger.LogInformation("获取所有餐馆");
