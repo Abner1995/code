@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Application.Restaurants.Dtos;
 
 namespace CleanArchitecture.Application.Restaurants;
 
 public interface IRestaurantsService
 {
-    Task<IEnumerable<Restaurant>> GetAllRestaurants();
-    Task<Restaurant?> GetId(int id);
+    Task<IEnumerable<RestaurantDto>> GetAllRestaurants();
+    Task<RestaurantDto?> GetId(int id);
 }
