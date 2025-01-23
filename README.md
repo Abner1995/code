@@ -8,5 +8,6 @@
 
 |项目名|描述|文档地址  
 |-|-|-  
-|csharp\code\ContactSMS\ContactSMS.sln|dotnet WebAPI学习|[github](https://snotes.readthedocs.io/zh-cn/latest/dotnet/index.html)    
+|csharp\code\ContactSMS\ContactSMS.sln|dotnet WebAPI学习|[snotes](https://snotes.readthedocs.io/zh-cn/latest/dotnet/index.html)    
+|csharp\code\CleanArchitecture\CleanArchitecture.sln|Asp.Net Core 8 Web Api： 简洁架构|[snotes](https://snotes.readthedocs.io/zh-cn/latest/dotnet/CleanArchitecture/index.html)    
 
