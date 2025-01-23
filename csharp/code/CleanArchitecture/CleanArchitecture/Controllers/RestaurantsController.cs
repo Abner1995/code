@@ -1,5 +1,7 @@
 ﻿using CleanArchitecture.Application.Restaurants;
 using CleanArchitecture.Application.Restaurants.Commands.CreateRestaurant;
+using CleanArchitecture.Application.Restaurants.Commands.DeleteRestaurant;
+using CleanArchitecture.Application.Restaurants.Commands.UpdateRestaurant;
 using CleanArchitecture.Application.Restaurants.Dtos;
 using CleanArchitecture.Application.Restaurants.Queries.GetAllRestaurants;
 using CleanArchitecture.Application.Restaurants.Queries.GetRestaurantById;
@@ -38,5 +40,20 @@ public class RestaurantsController(IRestaurantsService restaurantsService, IMedi
         //使用MediatR
         int id = await mediator.Send(command);
         return CreatedAtAction(nameof(GetId), new { id }, null);
+    }
+
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> UpdateRestaurant([FromRoute] int id, UpdateRestaurantCommand command)
+    {
+        command.Id = id;
+        await mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
+    {
+        await mediator.Send(new DeleteRestaurantCommand(id));
+        return NoContent();
     }
 }

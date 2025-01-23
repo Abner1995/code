@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Restaurants.Commands.CreateRestaurant;
+using CleanArchitecture.Application.Restaurants.Commands.UpdateRestaurant;
 using CleanArchitecture.Domain.Entities;
 
 namespace CleanArchitecture.Application.Restaurants.Dtos;
@@ -8,6 +9,8 @@ public class RestaurantProfile : Profile
 {
     public RestaurantProfile()
     {
+        CreateMap<UpdateRestaurantCommand, Restaurant>();
+
         //使用MediatR把CreateRestaurantDto改成CreateRestaurantCommand
         CreateMap<CreateRestaurantCommand, Restaurant>()
             .ForMember(d => d.Address, opt => opt.MapFrom(src => new Address()
