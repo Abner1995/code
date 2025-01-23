@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Exceptions;
 using CleanArchitecture.Domain.Repositories;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -16,7 +17,7 @@ public class UpdateRestaurantCommandHandler(ILogger<UpdateRestaurantCommandHandl
         logger.LogInformation("Updating restaurant with id: {RestaurantId} with {@UpdatedRestaurant}", request.Id, request);
         var restaurant = await restaurantsRepository.GetIdAsync(request.Id);
         if (restaurant is null)
-            throw new Exception(nameof(Restaurant));
+            throw new NotFoundException(nameof(Restaurant), request.Id.ToString());
 
         mapper.Map(request, restaurant);
         //restaurant.Name = request.Name;

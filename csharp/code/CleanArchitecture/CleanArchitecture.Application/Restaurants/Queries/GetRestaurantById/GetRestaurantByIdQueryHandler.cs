@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Restaurants.Dtos;
 using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Exceptions;
 using CleanArchitecture.Domain.Repositories;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -15,7 +16,7 @@ public class GetRestaurantByIdQueryHandler(ILogger<GetRestaurantByIdQueryHandler
     {
         logger.LogInformation("Getting restaurant {RestaurantId}", request.Id);
         var restaurant = await restaurantsRepository.GetIdAsync(request.Id)
-                ?? throw new Exception(nameof(Restaurant));
+                ?? throw new NotFoundException(nameof(Restaurant), request.Id.ToString());
         var restaurantDto = mapper.Map<RestaurantDto>(restaurant);
         return restaurantDto;
     }

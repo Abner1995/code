@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Exceptions;
 using CleanArchitecture.Domain.Repositories;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -13,7 +14,7 @@ public class DeleteRestaurantCommandHandler(ILogger<DeleteRestaurantCommandHandl
         logger.LogInformation("Deleting restaurant with id: {RestaurantId}", request.Id);
         var restaurant = await restaurantsRepository.GetIdAsync(request.Id);
         if (restaurant is null)
-            throw new Exception(nameof(Restaurant));
+            throw new NotFoundException(nameof(Restaurant), request.Id.ToString());
 
         await restaurantsRepository.DeleteAsync(restaurant);
     }

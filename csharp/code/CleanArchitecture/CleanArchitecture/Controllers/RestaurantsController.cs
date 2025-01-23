@@ -6,7 +6,6 @@ using CleanArchitecture.Application.Restaurants.Dtos;
 using CleanArchitecture.Application.Restaurants.Queries.GetAllRestaurants;
 using CleanArchitecture.Application.Restaurants.Queries.GetRestaurantById;
 using MediatR;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.API.Controllers;
@@ -43,6 +42,8 @@ public class RestaurantsController(IRestaurantsService restaurantsService, IMedi
     }
 
     [HttpPatch("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> UpdateRestaurant([FromRoute] int id, UpdateRestaurantCommand command)
     {
         command.Id = id;
@@ -51,6 +52,8 @@ public class RestaurantsController(IRestaurantsService restaurantsService, IMedi
     }
 
     [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
     {
         await mediator.Send(new DeleteRestaurantCommand(id));
