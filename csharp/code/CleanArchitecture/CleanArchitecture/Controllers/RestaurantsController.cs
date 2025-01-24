@@ -5,6 +5,7 @@ using CleanArchitecture.Application.Restaurants.Commands.UpdateRestaurant;
 using CleanArchitecture.Application.Restaurants.Dtos;
 using CleanArchitecture.Application.Restaurants.Queries.GetAllRestaurants;
 using CleanArchitecture.Application.Restaurants.Queries.GetRestaurantById;
+using CleanArchitecture.Domain.Constants;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +37,7 @@ public class RestaurantsController(IRestaurantsService restaurantsService, IMedi
     }
 
     [HttpPost]
+    [Authorize(Roles = UserRoles.Owner)]
     public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command)
     {
         //int id = await restaurantsService.Create(createRestaurantDto);
