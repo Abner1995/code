@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Domain.Repositories;
+﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Repositories;
 using CleanArchitecture.Infrastructure.Persistence;
 using CleanArchitecture.Infrastructure.Repositories;
 using CleanArchitecture.Infrastructure.Seeders;
@@ -14,6 +15,9 @@ public static class ServiceCollectionExtensions
     {
         services.AddDbContext<RestaurantsDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("RestaurantsDb"))
           .EnableSensitiveDataLogging());
+
+        services.AddIdentityApiEndpoints<User>()
+            .AddEntityFrameworkStores<RestaurantsDbContext>();
 
         services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();

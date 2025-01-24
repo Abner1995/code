@@ -6,15 +6,18 @@ using CleanArchitecture.Application.Restaurants.Dtos;
 using CleanArchitecture.Application.Restaurants.Queries.GetAllRestaurants;
 using CleanArchitecture.Application.Restaurants.Queries.GetRestaurantById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class RestaurantsController(IRestaurantsService restaurantsService, IMediator mediator) : ControllerBase
 {
     [HttpGet]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAll([FromQuery] GetAllRestaurantsQuery query)
     {
         //var restaurants = await restaurantsService.GetAllRestaurants();

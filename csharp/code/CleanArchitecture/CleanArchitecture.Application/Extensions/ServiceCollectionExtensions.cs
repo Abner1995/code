@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Application.Restaurants;
+using CleanArchitecture.Application.Users;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,5 +16,9 @@ public static class ServiceCollectionExtensions
         services.AddAutoMapper(applicationAssembly);
         services.AddValidatorsFromAssembly(applicationAssembly)
            .AddFluentValidationAutoValidation();
+
+        services.AddScoped<IUserContext, UserContext>();
+        //UserContext使用到IHttpContextAccessor所以需要注入
+        services.AddHttpContextAccessor();
     }
 }
