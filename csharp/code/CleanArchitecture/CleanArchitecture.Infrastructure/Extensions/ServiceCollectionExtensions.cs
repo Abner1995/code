@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Repositories;
+using CleanArchitecture.Infrastructure.Authorization;
 using CleanArchitecture.Infrastructure.Persistence;
 using CleanArchitecture.Infrastructure.Repositories;
 using CleanArchitecture.Infrastructure.Seeders;
@@ -19,6 +20,7 @@ public static class ServiceCollectionExtensions
 
         services.AddIdentityApiEndpoints<User>()
             .AddRoles<IdentityRole>()
+            .AddClaimsPrincipalFactory<RestaurantsUserClaimsPrincipalFactory>()
             .AddEntityFrameworkStores<RestaurantsDbContext>();
 
         services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
