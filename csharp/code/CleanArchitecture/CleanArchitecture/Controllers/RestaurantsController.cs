@@ -6,6 +6,7 @@ using CleanArchitecture.Application.Restaurants.Dtos;
 using CleanArchitecture.Application.Restaurants.Queries.GetAllRestaurants;
 using CleanArchitecture.Application.Restaurants.Queries.GetRestaurantById;
 using CleanArchitecture.Domain.Constants;
+using CleanArchitecture.Infrastructure.Authorization;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,7 @@ public class RestaurantsController(IRestaurantsService restaurantsService, IMedi
 {
     [HttpGet]
     [AllowAnonymous]
+    [Authorize(Policy = PolicyNames.CreatedAtleast2Restaurants)]
     public async Task<IActionResult> GetAll([FromQuery] GetAllRestaurantsQuery query)
     {
         //var restaurants = await restaurantsService.GetAllRestaurants();
@@ -27,6 +29,7 @@ public class RestaurantsController(IRestaurantsService restaurantsService, IMedi
     }
 
     [HttpGet("{id}")]
+    [Authorize(Policy = PolicyNames.HasNationality)]
     public async Task<IActionResult> GetId([FromRoute] int id)
     {
         //var restaurant = await restaurantsService.GetId(id);
