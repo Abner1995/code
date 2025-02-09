@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiUI.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LoginPage"
+    Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Path
+            Data="m0.30001,0l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429c0,-45.25313 0,-90.47304 0,-135.72617z"
+            Fill="#2ECC71"
+            Stroke="#fff" />
+
+        <StackLayout>
+            <Frame
+                Margin="0,100,0,0"
+                Padding="0"
+                BackgroundColor="SkyBlue"
+                CornerRadius="30"
+                HeightRequest="60"
+                HorizontalOptions="Center"
+                WidthRequest="60">
+                <Image
+                    Margin="10"
+                    Aspect="AspectFill"
+                    Source="avatar.png" />
+            </Frame>
+        </StackLayout>
+
+        <Grid
+            Grid.Row="1"
+            Margin="20,20,20,0"
+            RowSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="1"
+                Margin="0"
+                Padding="0"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                Text="欢迎" />
+
+            <Label
+                Grid.Row="2"
+                FontAttributes="Bold"
+                FontSize="Subtitle"
+                HorizontalOptions="Center"
+                Text="登录" />
+
+            <StackLayout
+                Grid.Row="3"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Vertical">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="LightGreen"
+                    CornerRadius="30"
+                    HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame
+                            Margin="5"
+                            Padding="0"
+                            BackgroundColor="SkyBlue"
+                            CornerRadius="30"
+                            HeightRequest="40"
+                            WidthRequest="40">
+                            <Image
+                                Margin="0"
+                                Aspect="AspectFill"
+                                Source="login_username.png" />
+                        </Frame>
+                        <Entry
+                            Margin="0,0,20,0"
+                            FontAttributes="Bold"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="用户名"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame
+                    Margin="0,15,0,0"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="LightGreen"
+                    CornerRadius="30"
+                    HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame
+                            Margin="5"
+                            Padding="0"
+                            BackgroundColor="SkyBlue"
+                            CornerRadius="30"
+                            HeightRequest="40"
+                            WidthRequest="40">
+                            <Image
+                                Margin="0"
+                                Aspect="AspectFill"
+                                Source="password.png" />
+                        </Frame>
+                        <Entry
+                            Margin="0,0,20,0"
+                            FontAttributes="Bold"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="密码"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout
+                    Margin="0,10,0,0"
+                    Padding="0"
+                    Orientation="Horizontal">
+                    <CheckBox IsChecked="False" />
+                    <Label
+                        FontSize="Small"
+                        HorizontalTextAlignment="Center"
+                        Text="记住我"
+                        TextColor="DarkGray"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalOptions="EndAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="忘记密码"
+                        TextColor="#1D8348"
+                        VerticalTextAlignment="Center" />
+                </StackLayout>
+
+                <Button
+                    Margin="0,15,0,0"
+                    BackgroundColor="#58D68D"
+                    CornerRadius="30"
+                    FontAttributes="Bold"
+                    Text="登录"
+                    TextColor="White"
+                    WidthRequest="200" />
+
+                <StackLayout
+                    Margin="0,60,0,0"
+                    Padding="0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+                    <Label
+                        FontSize="Small"
+                        Text="新用户？"
+                        TextColor="DarkGray" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        Text="注册"
+                        TextColor="#1D8348" />
+                </StackLayout>
+
+            </StackLayout>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
