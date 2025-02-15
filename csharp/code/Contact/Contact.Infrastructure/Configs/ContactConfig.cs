@@ -12,6 +12,10 @@ public class ContactConfig : IEntityTypeConfiguration<ContactDomainEntities>
         builder.HasKey(t => t.Id);
         builder.Property(t => t.UserId).HasComment("用户ID");
         builder.Property(t => t.UserName).HasMaxLength(60).IsRequired().HasComment("姓名");
+        builder.HasMany(c => c.Phones)
+        .WithOne()
+        .HasForeignKey("ContactId");
+        //添加这句无法使用Include
         //builder.Ignore(c => c.Phones);
     }
 }
