@@ -1,4 +1,5 @@
-﻿using ContactDomainEntities = Contact.Domain.Entities.Contact;
+﻿using Contact.Domain.Constants;
+using ContactDomainEntities = Contact.Domain.Entities.Contact;
 
 namespace Contact.Domain.Repositories;
 
@@ -8,4 +9,5 @@ public interface IContactsRepository
     Task<ContactDomainEntities?> GetByIdAsync(int id);
     Task UpdateAsync(ContactDomainEntities contact);
     Task DeleteAsync(ContactDomainEntities contact);
+    Task<(IEnumerable<ContactDomainEntities>, int)> GetAllMatchingAsync(string? searchPhrase, int pageSize, int pageNumber, string? sortBy, SortDirection sortDirection);
 }
