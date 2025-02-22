@@ -8,4 +8,5 @@ public class User
     public string? Avatar { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
+    public virtual List<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
 }

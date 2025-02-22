@@ -15,5 +15,8 @@ public class UserConfig : IEntityTypeConfiguration<User>
         builder.Property(t => t.Avatar).HasComment("头像");
         builder.Property(t => t.CreatedAt).HasComment("创建时间");
         builder.Property(t => t.UpdatedAt).HasComment("更新时间");
+        builder.HasMany(c => c.RefreshTokens)
+        .WithOne()
+        .HasForeignKey("UserId");
     }
 }
