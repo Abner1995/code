@@ -1,34 +1,32 @@
 ﻿using Contact.Domain.Constants;
-using Contact.Domain.Entities;
 using Contact.Domain.Repositories;
 using Contact.Infrastructure.Persistence;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using ContactDomainEntities = Contact.Domain.Entities.Contact;
 
 namespace Contact.Infrastructure.Repositories;
 
-internal class ContactsRepository(ContactDbContexts contactDbContexts) : IContactsRepository
+internal class ContactsRepository(ContactDbContexts dbContexts) : IContactsRepository
 {
     public async Task<int> CreateAsync(ContactDomainEntities contact)
     {
-        await contactDbContexts.Contacts.AddAsync(contact);
-        await contactDbContexts.SaveChangesAsync();
+        await dbContexts.Contacts.AddAsync(contact);
+        await dbContexts.SaveChangesAsync();
         return contact.Id;
     }
 
     public async Task DeleteAsync(ContactDomainEntities contact)
     {
-        contactDbContexts.Contacts.Remove(contact);
-        await contactDbContexts.SaveChangesAsync();
+        dbContexts.Contacts.Remove(contact);
+        await dbContexts.SaveChangesAsync();
     }
 
     public async Task<(IEnumerable<ContactDomainEntities>, int)> GetAllMatchingAsync(string? searchPhrase, int pageSize, int pageNumber, string? sortBy, SortDirection sortDirection)
     {
         var searchPhraseLower = searchPhrase?.ToLower();
 
-        var baseQuery = contactDbContexts
+        var baseQuery = dbContexts
             .Contacts
             .Where(r => searchPhraseLower == null || (r.UserName.ToLower().Contains(searchPhraseLower)));
 
@@ -59,14 +57,19 @@ internal class ContactsRepository(ContactDbContexts contactDbContexts) : IContac
 
     public async Task<ContactDomainEntities?> GetByIdAsync(int id)
     {
-        return await contactDbContexts.Contacts
-            .Include(c => c.Phones)
+        var contact = await dbContexts.Contacts
+            //.Include(c => c.Phones)
             .FirstOrDefaultAsync(x=>x.Id.Equals(id));
+        if(contact != null)
+        {
+            contact.Phones = await dbContexts.Phones.Where(x => x.ContactId == id).ToListAsync();
+        }
+        return contact;
     }
 
     public async Task UpdateAsync(ContactDomainEntities contact)
     {
-        contactDbContexts.Contacts.Update(contact);
-        await contactDbContexts.SaveChangesAsync();
+        dbContexts.Contacts.Update(contact);
+        await dbContexts.SaveChangesAsync();
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Contact.Infrastructure.Repositories;
@@ -30,6 +31,19 @@ internal class JwtService(IOptions<JwtSettings> jwtSettings) : IJwtService
             signingCredentials: credentials
         );
         return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+
+    public int GetTokenExpiry() 
+    {
+        return jwtSettings.Value.ExpiryInMinutes;
+    }
+
+    public string GenerateRefreshToken()
+    {
+        var randomNumber = new byte[32];
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes(randomNumber);
+        return Convert.ToBase64String(randomNumber);
     }
 
     public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)

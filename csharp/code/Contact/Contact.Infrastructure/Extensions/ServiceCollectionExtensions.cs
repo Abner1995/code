@@ -14,10 +14,12 @@ public static class ServiceCollectionExtensions
     {
         services.AddDbContext<ContactDbContexts>(options=> options.UseMySql(configuration.GetConnectionString("mysql"), new MySqlServerVersion(new Version(5, 6, 20))).EnableSensitiveDataLogging());
 
+        services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IContactsRepository, ContactsRepository>();
         services.AddScoped<IPhonesRepository, PhonesRepository>();
         services.AddScoped<IUsersRepository, UsersRepository>();
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
         services.AddScoped<IUserSeeder, UserSeeder>();
     }

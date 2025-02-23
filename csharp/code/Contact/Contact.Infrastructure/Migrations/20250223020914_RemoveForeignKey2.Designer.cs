@@ -4,6 +4,7 @@ using Contact.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Contact.Infrastructure.Migrations
 {
     [DbContext(typeof(ContactDbContexts))]
-    partial class ContactDbContextsModelSnapshot : ModelSnapshot
+    [Migration("20250223020914_RemoveForeignKey2")]
+    partial class RemoveForeignKey2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,6 +74,8 @@ namespace Contact.Infrastructure.Migrations
                         .HasComment("用户ID");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ContactId");
 
                     b.ToTable("t_phone", null, t =>
                         {
@@ -149,6 +154,20 @@ namespace Contact.Infrastructure.Migrations
                         {
                             t.HasComment("用户表");
                         });
+                });
+
+            modelBuilder.Entity("Contact.Domain.Entities.Phone", b =>
+                {
+                    b.HasOne("Contact.Domain.Entities.Contact", null)
+                        .WithMany("Phones")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Contact.Domain.Entities.Contact", b =>
+                {
+                    b.Navigation("Phones");
                 });
 #pragma warning restore 612, 618
         }

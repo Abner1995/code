@@ -4,6 +4,7 @@ using Contact.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Contact.Infrastructure.Migrations
 {
     [DbContext(typeof(ContactDbContexts))]
-    partial class ContactDbContextsModelSnapshot : ModelSnapshot
+    [Migration("20250223021036_RemoveForeignKey3")]
+    partial class RemoveForeignKey3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

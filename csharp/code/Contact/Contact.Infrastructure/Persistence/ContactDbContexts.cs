@@ -7,6 +7,7 @@ namespace Contact.Infrastructure.Persistence;
 internal class ContactDbContexts : DbContext
 {
     internal DbSet<User> Users { get; set; }
+    internal DbSet<RefreshToken> RefreshTokens { get; set; }
     internal DbSet<ContactDomainEntities> Contacts { get; set; }
     internal DbSet<Phone> Phones { get; set; }
 
