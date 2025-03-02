@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Contact.UI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Contact.UI.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+
+        <ShellContent Title="登录" ContentTemplate="{DataTemplate views:LoginPage}" />
+
+        <ShellContent Title="通讯录" ContentTemplate="{DataTemplate views:ContactPage}" />
+
+        <ShellContent Title="我" ContentTemplate="{DataTemplate views:MePage}" />
+
+    </TabBar>
+
+</Shell>

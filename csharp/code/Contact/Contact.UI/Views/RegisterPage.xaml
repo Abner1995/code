@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Contact.UI.Views.RegisterPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="注册"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="30,200,*,20">
+
+        <HorizontalStackLayout
+            Grid.Row="0"
+            Margin="25"
+            HorizontalOptions="Start">
+            <Frame
+                Padding="0"
+                BorderColor="Transparent"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                WidthRequest="30">
+                <Image Aspect="AspectFill" Source="close.png" />
+            </Frame>
+
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout
+            Grid.Row="1"
+            Margin="0,30,0,0"
+            HorizontalOptions="Center">
+            <Frame
+                Padding="0"
+                BorderColor="Transparent"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                WidthRequest="100">
+                <Image
+                    Margin="10"
+                    Aspect="AspectFill"
+                    Source="contact.png" />
+            </Frame>
+            <Frame
+                Padding="0"
+                BorderColor="Transparent"
+                HorizontalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="19"
+                    HorizontalOptions="Center"
+                    Text="注册账号" />
+            </Frame>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+
+                <Grid ColumnSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Frame
+                        Grid.Column="1"
+                        Padding="0"
+                        BorderColor="Transparent"
+                        HeightRequest="50"
+                        VerticalOptions="Center"
+                        WidthRequest="50">
+                        <Image
+                            Margin="10"
+                            Aspect="AspectFill"
+                            Source="username.png" />
+                    </Frame>
+                    <Entry
+                        Grid.Column="2"
+                        Margin="10,0,20,0"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Placeholder="请输入用户名"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="0,8,0,0">
+
+                <Grid ColumnSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Frame
+                        Grid.Column="1"
+                        Padding="0"
+                        BorderColor="Transparent"
+                        HeightRequest="50"
+                        VerticalOptions="Center"
+                        WidthRequest="50">
+                        <Image
+                            Margin="10"
+                            Aspect="AspectFill"
+                            Source="password.png" />
+                    </Frame>
+                    <Entry
+                        Grid.Column="2"
+                        Margin="10,0,20,0"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        IsPassword="True"
+                        Placeholder="请输入密码"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="0,8,0,0">
+
+                <Grid ColumnSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Frame
+                        Grid.Column="1"
+                        Padding="0"
+                        BorderColor="Transparent"
+                        HeightRequest="50"
+                        VerticalOptions="Center"
+                        WidthRequest="50">
+                        <Image
+                            Margin="10"
+                            Aspect="AspectFill"
+                            Source="password.png" />
+                    </Frame>
+                    <Entry
+                        Grid.Column="2"
+                        Margin="10,0,20,0"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        IsPassword="True"
+                        Placeholder="请输入密码"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+
+            <Label
+                Grid.Row="3"
+                Margin="0,0,60,0"
+                HorizontalOptions="End"
+                Text="已有账号登录"
+                TextColor="#4BADC0">
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Login_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Button
+                Grid.Row="4"
+                BackgroundColor="#0796FF"
+                CornerRadius="30"
+                FontSize="18"
+                Text="注册"
+                WidthRequest="250" />
+
+        </Grid>
+
+        <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center">
+            <CheckBox Color="SkyBlue" />
+            <Label Text="已阅读并且同意" />
+            <Label Text="《服务协议》" TextColor="#2D8DCA" />
+            <Label Text="和" />
+            <Label Text="《隐私政策》" TextColor="#2D8DCA" />
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentPage>

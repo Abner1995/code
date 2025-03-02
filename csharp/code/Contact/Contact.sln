@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决�
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contact.UI", "Contact.UI\Contact.UI.csproj", "{FCDF8453-6BDE-4D6E-B038-8C789AF884FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,12 @@ Global
 		{1F8ACDA0-CFAC-4D1A-B194-3FB1B3483924}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8ACDA0-CFAC-4D1A-B194-3FB1B3483924}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F8ACDA0-CFAC-4D1A-B194-3FB1B3483924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDF8453-6BDE-4D6E-B038-8C789AF884FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDF8453-6BDE-4D6E-B038-8C789AF884FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDF8453-6BDE-4D6E-B038-8C789AF884FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FCDF8453-6BDE-4D6E-B038-8C789AF884FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDF8453-6BDE-4D6E-B038-8C789AF884FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDF8453-6BDE-4D6E-B038-8C789AF884FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +59,7 @@ Global
 		{5035A150-EC47-4248-B19E-B65C55052205} = {53572413-B8ED-4E50-8E2B-06000348C039}
 		{CA72FA7A-D589-477D-8892-635D7F249BA6} = {53572413-B8ED-4E50-8E2B-06000348C039}
 		{1F8ACDA0-CFAC-4D1A-B194-3FB1B3483924} = {53572413-B8ED-4E50-8E2B-06000348C039}
+		{FCDF8453-6BDE-4D6E-B038-8C789AF884FD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D74AD53-C2D4-44AB-AC03-C85C8F205291}
