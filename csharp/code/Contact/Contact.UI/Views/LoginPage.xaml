@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<toolkit:Popup
     x:Class="Contact.UI.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="登录"
-    Shell.NavBarIsVisible="False">
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Shell.NavBarIsVisible="False"
+    Color="White">
 
-    <Grid RowDefinitions="30,200,*,20">
+    <Grid RowDefinitions="55,200,*,20">
 
-        <HorizontalStackLayout
+        <ImageButton
             Grid.Row="0"
-            Margin="25"
-            HorizontalOptions="Start">
-            <Frame
-                Padding="0"
-                BorderColor="Transparent"
-                HeightRequest="30"
-                HorizontalOptions="Center"
-                WidthRequest="30">
-                <Image Aspect="AspectFill" Source="close.png" />
-            </Frame>
-
-        </HorizontalStackLayout>
+            Margin="10"
+            Padding="10"
+            Clicked="Button_Clicked"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            Source="close.png"
+            WidthRequest="40" />
 
         <VerticalStackLayout
             Grid.Row="1"
@@ -154,4 +150,4 @@
 
     </Grid>
 
-</ContentPage>
+</toolkit:Popup>

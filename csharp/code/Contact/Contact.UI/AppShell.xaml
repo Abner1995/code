@@ -8,8 +8,6 @@
 
     <TabBar>
 
-        <ShellContent Title="登录" ContentTemplate="{DataTemplate views:LoginPage}" />
-
         <ShellContent Title="通讯录" ContentTemplate="{DataTemplate views:ContactPage}" />
 
         <ShellContent Title="我" ContentTemplate="{DataTemplate views:MePage}" />
