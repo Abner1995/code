@@ -1,6 +1,7 @@
 ﻿using Contact.UI.Views;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Contact.UI.ViewModels;
 
 namespace Contact.UI;
 
@@ -26,6 +27,10 @@ public static class MauiProgram
         builder.Services.AddSingleton<RegisterPage>();
         builder.Services.AddSingleton<MePage>();
         builder.Services.AddSingleton<ContactPage>();
+        builder.Services.AddSingleton<AddContactPage>();
+        builder.Services.AddSingleton<ContactDetailPage>();
+
+        builder.Services.AddSingleton<ContactViewModel>();
 
         return builder.Build();
     }

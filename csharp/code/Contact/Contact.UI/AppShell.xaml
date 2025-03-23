@@ -8,9 +8,25 @@
 
     <TabBar>
 
-        <ShellContent Title="通讯录" ContentTemplate="{DataTemplate views:ContactPage}" />
+        <ShellContent
+            Title="新增联系人"
+            ContentTemplate="{DataTemplate views:AddContactPage}"
+            Icon="contactnav.png" />
 
-        <ShellContent Title="我" ContentTemplate="{DataTemplate views:MePage}" />
+        <ShellContent
+            Title="联系人详情"
+            ContentTemplate="{DataTemplate views:ContactDetailPage}"
+            Icon="contactnav.png" />
+
+        <ShellContent
+            Title="通讯录"
+            ContentTemplate="{DataTemplate views:ContactPage}"
+            Icon="contactnav.png" />
+
+        <ShellContent
+            Title="我"
+            ContentTemplate="{DataTemplate views:MePage}"
+            Icon="me.png" />
 
     </TabBar>
 

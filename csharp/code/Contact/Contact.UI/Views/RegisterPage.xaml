@@ -7,17 +7,19 @@
     Shell.NavBarIsVisible="False"
     Color="White">
 
-    <Grid RowDefinitions="30,200,*,20">
+    <Grid RowDefinitions="30,200,*,50">
 
-        <ImageButton
+        <Image
             Grid.Row="0"
-            Margin="10"
-            Padding="10"
-            Clicked="Button_Clicked"
-            HeightRequest="40"
+            Margin="20,20,20,0"
+            HeightRequest="25"
             HorizontalOptions="Start"
             Source="close.png"
-            WidthRequest="40" />
+            WidthRequest="25">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Button_Clicked" />
+            </Image.GestureRecognizers>
+        </Image>
 
         <VerticalStackLayout
             Grid.Row="1"
@@ -176,11 +178,17 @@
         </Grid>
 
         <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center">
-            <CheckBox Color="SkyBlue" />
-            <Label Text="已阅读并且同意" />
-            <Label Text="《服务协议》" TextColor="#2D8DCA" />
-            <Label Text="和" />
-            <Label Text="《隐私政策》" TextColor="#2D8DCA" />
+            <CheckBox VerticalOptions="Center" Color="SkyBlue" />
+            <Label Text="已阅读并且同意" VerticalOptions="Center" />
+            <Label
+                Text="《服务协议》"
+                TextColor="#2D8DCA"
+                VerticalOptions="Center" />
+            <Label Text="和" VerticalOptions="Center" />
+            <Label
+                Text="《隐私政策》"
+                TextColor="#2D8DCA"
+                VerticalOptions="Center" />
         </HorizontalStackLayout>
 
     </Grid>

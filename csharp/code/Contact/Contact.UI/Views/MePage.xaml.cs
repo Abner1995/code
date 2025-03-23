@@ -15,4 +15,9 @@ public partial class MePage : ContentPage
         loginPage.BindingContext = this;
         await this.ShowPopupAsync(loginPage);
     }
+
+    private void Logout_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -58,6 +58,11 @@
 
 	<ItemGroup>
 		<None Remove="Resources\Images\common\close.png" />
+		<None Remove="Resources\Images\contact\contactavatar.png" />
+		<None Remove="Resources\Images\me\login.png" />
+		<None Remove="Resources\Images\me\logout.png" />
+		<None Remove="Resources\Images\me\meright.png" />
+		<None Remove="Resources\Images\tab\me.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -69,6 +74,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="Views\AddContactPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\ContactDetailPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Views\ContactPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -90,11 +101,29 @@
 		<MauiImage Include="Resources\Images\common\contact.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</MauiImage>
+		<MauiImage Include="Resources\Images\contact\contactavatar.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiImage>
 		<MauiImage Include="Resources\Images\login\password.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</MauiImage>
 		<MauiImage Include="Resources\Images\login\username.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\me\login.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\me\logout.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\me\meright.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\tab\contactnav.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Include="Resources\Images\tab\me.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</MauiImage>
 	</ItemGroup>
 
