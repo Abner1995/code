@@ -31,6 +31,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<ContactDetailPage>();
 
         builder.Services.AddSingleton<ContactViewModel>();
+        builder.Services.AddSingleton<ContactDetailModel>();
 
         return builder.Build();
     }

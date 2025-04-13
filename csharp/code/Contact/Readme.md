@@ -2,6 +2,8 @@
 
 项目使用整洁架构实现通讯录APP  
 
+这个比较失败的项目模仿
+
 ## 技术栈
 .NET 8 WebAPI + MySQL + MAUI
 
