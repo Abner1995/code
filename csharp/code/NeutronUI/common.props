@@ -1,0 +1,35 @@
+<Project>
+    <PropertyGroup>
+        <Version>2.11.0</Version>
+        <PackageIcon>logo_128.png</PackageIcon>
+        <NeutralLanguage>en</NeutralLanguage>
+        <RepositoryUrl>https://github.com/zuoyi/NeutronUI</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/zuoyi/NeutronUI</PackageProjectUrl>
+        <Authors>zuoyi</Authors>
+        <Description>NeutronUI is a Free &amp; Open-Source UI Kit for MAUI.</Description>
+        <PackageReleaseNotes>Check GitHub releases for changelog.</PackageReleaseNotes>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        
+        <PublishReadyToRun>false</PublishReadyToRun>
+
+        <!--Source-Linking-->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\..\art\logo_128.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
+  </ItemGroup>
+</Project>
