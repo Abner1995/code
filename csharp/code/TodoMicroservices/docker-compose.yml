@@ -1,0 +1,32 @@
+services:
+  apigateway:
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+      args:
+        BUILD_CONFIGURATION: Release  
+    ports:
+      - "5106:8080"
+    environment:
+      - ASPNETCORE_URLS=http://+:8080  
+    depends_on:
+      - apiuser
+    networks:
+      - todo-network
+
+  apiuser:
+    build:
+      context: ./ApiUser
+      dockerfile: Dockerfile
+      args:
+        BUILD_CONFIGURATION: Release
+    expose:
+      - "8080"  
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    networks:
+      - todo-network
+
+networks:
+  todo-network:
+    driver: bridge
