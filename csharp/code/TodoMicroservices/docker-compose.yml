@@ -11,12 +11,40 @@ services:
       - ASPNETCORE_URLS=http://+:8080  
     depends_on:
       - apiuser
+      - apiadmin
+      - apitodo
     networks:
       - todo-network
 
   apiuser:
     build:
       context: ./ApiUser
+      dockerfile: Dockerfile
+      args:
+        BUILD_CONFIGURATION: Release
+    expose:
+      - "8080"  
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    networks:
+      - todo-network
+
+  apiadmin:
+    build:
+      context: ./ApiAdmin
+      dockerfile: Dockerfile
+      args:
+        BUILD_CONFIGURATION: Release
+    expose:
+      - "8080"  
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    networks:
+      - todo-network
+
+  apitodo: 
+    build:
+      context: ./ApiTodo
       dockerfile: Dockerfile
       args:
         BUILD_CONFIGURATION: Release

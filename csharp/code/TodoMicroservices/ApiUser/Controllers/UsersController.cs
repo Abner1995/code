@@ -7,9 +7,9 @@ namespace ApiUser.Controllers;
 public class UsersController(ILogger<UsersController> logger) : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public IActionResult Get()
     {
-        logger.LogInformation("Get");
-        return Ok(new Guid());
+        logger.LogInformation("用户服务");
+        return Ok("用户服务");
     }
 }

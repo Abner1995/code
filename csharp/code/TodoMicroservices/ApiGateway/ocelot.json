@@ -12,6 +12,32 @@
       ],
       "UpstreamPathTemplate": "/users/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    // 管理服务路由
+    {
+      "DownstreamPathTemplate": "/api/Admins/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apiadmin",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/Admins/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    // Todo服务路由
+    {
+      "DownstreamPathTemplate": "/api/Todos/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "apitodo",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/Todos/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
   ],
   "GlobalConfiguration": {
