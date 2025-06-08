@@ -12,7 +12,7 @@ public class EFContext : DbContext, IUnitOfWork, ITransaction
     protected IMediator _mediator;
     ICapPublisher _capBus;
 
-    public EFContext(DbContextOptions<EFContext> options, IMediator mediator, ICapPublisher capBus) : base(options)
+    public EFContext(DbContextOptions options, IMediator mediator, ICapPublisher capBus) : base(options)
     {
         _mediator = mediator;
         _capBus = capBus;
