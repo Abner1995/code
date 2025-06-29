@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using Todo.Core.Middleware;
 
 namespace ApiUser.Extensions;
 
@@ -76,5 +77,7 @@ public static class WebApplicationBuilderExtensions
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("Authentication:Secret").Value!))
                 };
             });
+
+        builder.Services.AddScoped<ErrorHandlingMiddleware>();
     }
 }

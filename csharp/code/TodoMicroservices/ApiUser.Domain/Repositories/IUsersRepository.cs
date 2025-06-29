@@ -5,4 +5,5 @@ namespace ApiUser.Domain.Repositories;
 
 public interface IUsersRepository : IRepository<User, long>
 {
+    Task<User?> GetByUserNameAsync(string userName, CancellationToken cancellationToken);
 }

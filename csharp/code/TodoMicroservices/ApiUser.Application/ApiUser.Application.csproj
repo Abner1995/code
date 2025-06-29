@@ -14,6 +14,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\ApiUser.Domain\ApiUser.Domain.csproj" />
+		<ProjectReference Include="..\Shared\Todo.Core\Todo.Core.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -22,6 +22,8 @@ public class User : Entity<long>, IAggregateRoot
         this.UserName = userName;
         this.PassWord = passWord;
         this.Avatar = avatar;
+        this.CreatedAt = DateTime.UtcNow;
+        this.UpdatedAt = DateTime.UtcNow;
         this.AddDomainEvent(new UserCreatedDomainEvent(this));
     }
 }

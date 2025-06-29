@@ -6,6 +6,7 @@ using ApiUser.Infrastructure.Persistence;
 using DotNetCore.CAP;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Todo.Core.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +29,9 @@ builder.AddPresentation();
 
 var app = builder.Build();
 
-app.Logger.LogInformation("Swagger URL: /swagger/v1/swagger.json");
+app.UseMiddleware<ErrorHandlingMiddleware>();
+
+//app.Logger.LogInformation("Swagger URL: /swagger/v1/swagger.json");
 
 using (var scope = app.Services.CreateScope())
 {
@@ -42,11 +45,11 @@ using (var scope = app.Services.CreateScope())
         var dbContext = provider.GetService<UserDbContext>();
         var repo = provider.GetService<IUsersRepository>();
 
-        app.Logger.LogInformation($"DbContextOptions resolved: {dbOptions != null}");
-        app.Logger.LogInformation($"IMediator resolved: {mediator != null}");
-        app.Logger.LogInformation($"ICapPublisher resolved: {capBus != null}");
-        app.Logger.LogInformation($"UserDbContext resolved: {dbContext != null}");
-        app.Logger.LogInformation($"UsersRepository resolved: {repo != null}");
+        //app.Logger.LogInformation($"DbContextOptions resolved: {dbOptions != null}");
+        //app.Logger.LogInformation($"IMediator resolved: {mediator != null}");
+        //app.Logger.LogInformation($"ICapPublisher resolved: {capBus != null}");
+        //app.Logger.LogInformation($"UserDbContext resolved: {dbContext != null}");
+        //app.Logger.LogInformation($"UsersRepository resolved: {repo != null}");
     }
     catch (Exception ex)
     {
