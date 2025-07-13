@@ -10,4 +10,6 @@ public interface IRefreshTokenRepository : IRepository<RefreshToken, long>
     Task ManageRefreshTokenAsync(User user, string token, string? deviceId, CancellationToken cancellationToken);
 
     Task<int> CleanUpExpiredRefreshTokens(long userId, CancellationToken cancellationToken);
+
+    Task<RefreshToken?> GetByTokenAsync(string token, CancellationToken cancellationToken);
 }

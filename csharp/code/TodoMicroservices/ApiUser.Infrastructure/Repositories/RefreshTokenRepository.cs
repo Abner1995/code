@@ -22,19 +22,26 @@ public class RefreshTokenRepository : Repository<RefreshToken, long, UserDbConte
             return 0;
         }
 
-        await using var transaction = await DbContext.Database.BeginTransactionAsync(cancellationToken);
+        //await using var transaction = await DbContext.Database.BeginTransactionAsync(cancellationToken);
         try
         {
             DbContext.Set<RefreshToken>().RemoveRange(refreshTokens);
             var affectedRows = await DbContext.SaveChangesAsync(cancellationToken);
-            await transaction.CommitAsync(cancellationToken);
+            //await transaction.CommitAsync(cancellationToken);
             return affectedRows;
         }
         catch (Exception ex)
         {
-            await transaction.RollbackAsync(CancellationToken.None);
+            //await transaction.RollbackAsync(CancellationToken.None);
             throw new Exception("清理过期RefreshToken失败", ex);
         }
+    }
+
+    public async Task<RefreshToken?> GetByTokenAsync(string token, CancellationToken cancellationToken)
+    {
+        return await DbContext.Set<RefreshToken>()
+            .Where(r => r.Token.Equals(token))
+            .FirstOrDefaultAsync(cancellationToken);
     }
 
     public async Task<List<RefreshToken>?> GetExpiredByUserIdAsync(long userId, CancellationToken cancellationToken)

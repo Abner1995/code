@@ -1,4 +1,5 @@
 ﻿using ApiUser.Application.User.Commands.Login;
+using ApiUser.Application.User.Commands.Refresh;
 using ApiUser.Application.User.Commands.Register;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -24,11 +25,11 @@ public class UsersController(IMediator mediator) : ControllerBase
         return response.Code == 200 ? Ok(response) : BadRequest(response);
     }
 
-    //[HttpPost("refresh")]
-    //[Authorize]
-    //public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand command)
-    //{
-    //    var res = await mediator.Send(command);
-    //    return Ok(res);
-    //}
+    [HttpPost("Refresh")]
+    [Authorize]
+    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand command)
+    {
+        var response = await mediator.Send(command);
+        return response.Code == 200 ? Ok(response) : BadRequest(response);
+    }
 }
