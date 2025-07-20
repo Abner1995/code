@@ -18,10 +18,11 @@ public class Todos : Entity<long>, IAggregateRoot
 
     }
 
-    public Todos(string title, long userId = 0)
+    public Todos(string title, DateTime? dueDate, long? userId = 0)
     {
         Title = title;
         UserId = userId;
+        DueDate = dueDate;
         Status = TodoStatus.Pending;
         Priority = TodoPriority.Medium;
         CreatedAt = DateTime.UtcNow;
