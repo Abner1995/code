@@ -4,12 +4,14 @@ using ApiTodo.Application.Todos.Commands.EditTodo;
 using ApiTodo.Application.Todos.Queries.GetAllTodo;
 using ApiTodo.Application.Todos.Queries.GetTodoById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTodo.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class TodosController(ILogger<TodosController> logger, IMediator mediator) : ControllerBase
 {
     [HttpPost("Add")]

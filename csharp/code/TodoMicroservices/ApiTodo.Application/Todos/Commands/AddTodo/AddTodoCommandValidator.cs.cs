@@ -7,7 +7,7 @@ public class AddTodoCommandValidator : AbstractValidator<AddTodoCommand>
     public AddTodoCommandValidator()
     {
         RuleFor(x => x.Title)
-            .Length(1, 10)
+            .Length(1, 100)
             .WithMessage("请输入内容");
     }
 }

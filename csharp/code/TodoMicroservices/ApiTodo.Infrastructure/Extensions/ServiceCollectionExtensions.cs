@@ -23,6 +23,8 @@ public static class ServiceCollectionExtensions
         });
         services.AddDbContext<TodoDbContext>(options => options.UseMySql(configuration.GetConnectionString("mysql"), new MySqlServerVersion(new Version(5, 6, 20))).EnableSensitiveDataLogging());
 
+        services.AddHttpContextAccessor();
+        services.AddScoped<IUserContext, UserContext>();
         services.AddScoped<ITodosRepository, TodosRepository>();
     }
 }

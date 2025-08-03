@@ -5,7 +5,7 @@ using Todo.Core.Exceptions;
 
 namespace ApiTodo.Application.Todos.Commands.EditTodo;
 
-public class EditTodoCommandHandler(ITodosRepository todosRepository) : IRequestHandler<EditTodoCommand, ApiResponse<long>>
+public class EditTodoCommandHandler(ITodosRepository todosRepository, IUserContext userContext) : IRequestHandler<EditTodoCommand, ApiResponse<long>>
 {
     public async Task<ApiResponse<long>> Handle(EditTodoCommand request, CancellationToken cancellationToken)
     {
@@ -15,7 +15,7 @@ public class EditTodoCommandHandler(ITodosRepository todosRepository) : IRequest
             throw new NotFoundException(nameof(todo), request.Title);
         }
 
-        long UserId = 1;
+        long UserId = userContext.UserId;
 
         todo.Update(
             title: request.Title,
