@@ -12,10 +12,16 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ApiTodo.csproj", "."]
-RUN dotnet restore "./ApiTodo.csproj"
+COPY ["ApiTodo/ApiTodo.csproj", "ApiTodo/"]
+COPY ["ApiTodo.Application/ApiTodo.Application.csproj", "ApiTodo.Application/"]
+COPY ["ApiTodo.Domain/ApiTodo.Domain.csproj", "ApiTodo.Domain/"]
+COPY ["Shared/Todo.Infrastructure.Core/Todo.Infrastructure.Core.csproj", "Shared/Todo.Infrastructure.Core/"]
+COPY ["Shared/Todo.Domain.Abstractions/Todo.Domain.Abstractions.csproj", "Shared/Todo.Domain.Abstractions/"]
+COPY ["Shared/Todo.Core/Todo.Core.csproj", "Shared/Todo.Core/"]
+COPY ["ApiTodo.Infrastructure/ApiTodo.Infrastructure.csproj", "ApiTodo.Infrastructure/"]
+RUN dotnet restore "./ApiTodo/ApiTodo.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/ApiTodo"
 RUN dotnet build "./ApiTodo.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # 此阶段用于发布要复制到最终阶段的服务项目

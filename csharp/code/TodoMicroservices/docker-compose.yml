@@ -1,4 +1,61 @@
 services:
+  mysql-user:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: todouser
+      MYSQL_USER: todouser
+      MYSQL_PASSWORD: todouser
+    ports:
+      - "3307:3306"  # 使用不同端口区分
+    volumes:
+      - mysql_user_data:/var/lib/mysql
+    networks:
+      - todo-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+
+  mysql-admin:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: todoadmin
+      MYSQL_USER: todoadmin
+      MYSQL_PASSWORD: todoadmin
+    ports:
+      - "3308:3306"  # 使用不同端口区分
+    volumes:
+      - mysql_admin_data:/var/lib/mysql
+    networks:
+      - todo-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+
+  mysql-todo:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: todo
+      MYSQL_USER: todo
+      MYSQL_PASSWORD: todo
+    ports:
+      - "3309:3306"  # 使用不同端口区分
+    volumes:
+      - mysql_todo_data:/var/lib/mysql
+    networks:
+      - todo-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+
   apigateway:
     build:
       context: ./ApiGateway
@@ -18,43 +75,57 @@ services:
 
   apiuser:
     build:
-      context: ./ApiUser
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ApiUser/Dockerfile
       args:
         BUILD_CONFIGURATION: Release
     expose:
       - "8080"  
     environment:
       - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      mysql-user:
+        condition: service_healthy
     networks:
       - todo-network
 
   apiadmin:
     build:
-      context: ./ApiAdmin
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ApiAdmin/Dockerfile
       args:
         BUILD_CONFIGURATION: Release
     expose:
       - "8080"  
     environment:
       - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      mysql-admin:
+        condition: service_healthy
     networks:
       - todo-network
 
   apitodo: 
     build:
-      context: ./ApiTodo
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ApiTodo/Dockerfile
       args:
         BUILD_CONFIGURATION: Release
     expose:
       - "8080"  
     environment:
       - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      mysql-todo:
+       condition: service_healthy
     networks:
       - todo-network
 
 networks:
   todo-network:
     driver: bridge
+
+volumes:
+  mysql_user_data:
+  mysql_admin_data:
+  mysql_todo_data:

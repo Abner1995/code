@@ -10,7 +10,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/users/{everything}",
+      "UpstreamPathTemplate": "/api/users/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     // 管理服务路由
@@ -23,7 +23,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/Admins/{everything}",
+      "UpstreamPathTemplate": "/api/Admins/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     // Todo服务路由
@@ -36,7 +36,7 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/Todos/{everything}",
+      "UpstreamPathTemplate": "/api/Todos/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
   ],
