@@ -1,3 +1,9 @@
 ﻿global using Carter;
 global using MediatR;
 global using Mapster;
+global using Marten;
+global using Marten.Pagination;
+global using Catalog.API.Models;
+global using BuildingBlocks.CQRS;
+global using BuildingBlocks.Exceptions;
+global using Catalog.API.Exceptions;
