@@ -1,9 +1,6 @@
 using BuildingBlocks.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Ordering.API.Endpoints;
-using Ordering.Application.Dtos;
 using Ordering.Application.Orders.Commands.CreateOrder;
-using Ordering.Domain.Enums;
 
 namespace Ordering.API.Endpoints.v2;
 

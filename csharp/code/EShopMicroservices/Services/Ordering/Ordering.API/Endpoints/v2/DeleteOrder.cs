@@ -1,10 +1,7 @@
 using BuildingBlocks.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
-using Ordering.API.Endpoints;
 using Ordering.Application.Data;
 using Ordering.Application.Orders.Commands.DeleteOrder;
-using Ordering.Domain.Models;
 using Ordering.Domain.ValueObjects;
 
 namespace Ordering.API.Endpoints.v2;

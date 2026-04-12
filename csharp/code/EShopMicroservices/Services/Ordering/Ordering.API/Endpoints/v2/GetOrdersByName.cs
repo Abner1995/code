@@ -1,11 +1,8 @@
 using BuildingBlocks.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Ordering.API.Endpoints;
 using Ordering.Application.Data;
-using Ordering.Application.Dtos;
 using Ordering.Application.Extensions;
-using Ordering.Domain.Models;
 
 namespace Ordering.API.Endpoints.v2;
 
