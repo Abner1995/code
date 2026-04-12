@@ -21,7 +21,19 @@ services:
     ports:
         - "5433:5432"
     volumes:
-      - postgres_basket:/var/lib/postgresql/data/ 
+      - postgres_basket:/var/lib/postgresql/data/
+
+  identitydb:
+    container_name: identitydb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=EShopIdentityDb
+    restart: always
+    ports:
+        - "5434:5432"
+    volumes:
+      - postgres_identity:/var/lib/postgresql/data/
 
   distributedcache:
     container_name: distributedcache
@@ -102,7 +114,24 @@ services:
       - "6002:8080"
       # - "6002:8081"
     volumes:
-        - sqlite_discount:/app/ 
+        - sqlite_discount:/app/
+    #   - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+    #   - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+    #   - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    #   - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  identity.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      # - ASPNETCORE_HTTPS_PORTS=8081
+      - ConnectionStrings__IdentityDatabase=Server=identitydb;Port=5432;Database=EShopIdentityDb;User Id=postgres;Password=123456;Include Error Detail=true
+    depends_on:
+      - identitydb
+    ports:
+      - "6006:8080"
+      # - "6066:8081"
+    # volumes:
     #   - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
     #   - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
     #   - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
@@ -139,6 +168,7 @@ services:
       - catalog.api
       - basket.api
       - ordering.api
+      - identity.api
     ports:
       - "6004:8080"
       # - "6064:8081"

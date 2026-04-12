@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find . -name \"*.md\" -type f 2>/dev/null | head -10)"
+      "Bash(find . -name \"*.md\" -type f 2>/dev/null | head -10)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet run:*)",
+      "Bash(curl -v http://localhost:6004/identity-service/register)",
+      "Bash(curl -v http://localhost:6004/identity-service/api/Auth/register)",
+      "Bash(curl -v http://localhost:6006/)",
+      "Bash(docker-compose restart:*)",
+      "Bash(xargs grep:*)",
+      "Bash(find \"D:\\\\code\\\\csharp\\\\code\\\\EShopMicroservices\\\\Services\" -name \"*.cs\" -type f -exec grep -l \"AddAuthentication\\\\|JwtBearer\" {} \\\\;)",
+      "Bash(find D:\\\\code\\\\csharp\\\\code\\\\EShopMicroservices\\\\Services\\\\Basket:*)",
+      "Bash(find:*)"
     ]
   }
 }

@@ -5,6 +5,9 @@ services:
   basketdb:
     image: postgres
 
+  identitydb:
+    image: postgres
+
   distributedcache:
     image: redis
 
@@ -32,6 +35,12 @@ services:
       context: .
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
 
+  identity.api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: Services/Identity/Identity.API/Dockerfile
+
   ordering.api:
     image: ${DOCKER_REGISTRY-}orderingapi
     build:
@@ -53,6 +62,7 @@ services:
 volumes:
   postgres_catalog:
   postgres_basket:
+  postgres_identity:
   sqlite_discount:
 
 
