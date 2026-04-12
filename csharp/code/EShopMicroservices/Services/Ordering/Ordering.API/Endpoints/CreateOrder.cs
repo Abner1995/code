@@ -5,6 +5,10 @@ namespace Ordering.API.Endpoints;
 public record CreateOrderRequest(OrderDto Order);
 public record CreateOrderResponse(Guid Id);
 
+/// <summary>
+/// v1 创建订单端点（存在安全风险：允许用户指定任意 CustomerId）
+/// 建议客户端迁移到 v2 端点，v2 端点使用认证用户上下文自动设置 CustomerId
+/// </summary>
 public class CreateOrder : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)

@@ -5,6 +5,10 @@ namespace Ordering.API.Endpoints;
 
 public record GetOrdersResponse(PaginatedResult<OrderDto> Orders);
 
+/// <summary>
+/// v1 获取订单端点（返回所有订单，不按用户过滤）
+/// 建议客户端迁移到 v2 端点，v2 端点自动按认证用户的 CustomerId 过滤订单
+/// </summary>
 public class GetOrders : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)

@@ -1,4 +1,5 @@
 ﻿using BuildingBlocks.Exceptions.Handler;
+using BuildingBlocks.Identity;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -10,6 +11,7 @@ public static class DependencyInjection
     {
         services.AddCarter();
         services.AddExceptionHandler<CustomExceptionHandler>();
+        services.AddUserContext();
         services.AddHealthChecks()
             .AddSqlServer(configuration.GetConnectionString("Database")!);
         return services;
