@@ -2,6 +2,7 @@ using Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using BuildingBlocks.Messaging.MassTransit;
+using BuildingBlocks.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddMediatR(config =>
 });
 builder.Services.AddValidatorsFromAssembly(assembly);
 builder.Services.AddCarter();
+builder.Services.AddUserContext();
 
 //Data Services
 builder.Services.AddMarten(opts =>
