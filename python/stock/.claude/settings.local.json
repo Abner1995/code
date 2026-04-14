@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile ElliotWave.py)",
+      "Bash(ls:*)",
+      "Bash(python:*)",
+      "Bash(wc:*)",
+      "Bash(dir:*)"
+    ]
+  }
+}
