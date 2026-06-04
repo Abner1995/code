@@ -373,3 +373,4 @@ python/stock/envs/*
 python/stock/history/*
 python/stock/test_output/*
 python/stock/output/*
+todos/*
