@@ -4,6 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Build & Run Commands
 
+**Prerequisites:** The Browser/WASM project requires the `wasm-tools` workload:
+```bash
+dotnet workload install wasm-tools
+```
+
 ```bash
 # Build the entire solution
 dotnet build
@@ -30,7 +35,9 @@ This is a cross-platform Avalonia UI 11.2 app targeting .NET 8. The solution use
 
 **MVVM with CommunityToolkit.Mvvm:** ViewModels extend `ViewModelBase` (which extends `ObservableObject`). Use `[ObservableProperty]` source generators for bindable properties — the field must be private and start with `_`.
 
-**View resolution:** `ViewLocator` implements `IDataTemplate` and maps `*ViewModel` types to `*View` types by convention (string replace), then resolves via reflection. It's registered in `App.axaml` as a data template.
+**View resolution:** `ViewLocator` implements `IDataTemplate` and maps `*ViewModel` types to `*View` types by convention — performs a string replace of "ViewModel" with "View" on the full type name, then resolves via `Activator`. This means ViewModels and their corresponding Views must live in the same assembly with namespace names that differ only by the `ViewModels`/`Views` segment (e.g., `AvaViewUI.ViewModels.FooViewModel` → `AvaViewUI.Views.FooView`).
+
+**View hierarchy:** `MainWindow` (desktop-only) wraps `MainView` (a `UserControl`) inside a `<Window>`. On Browser/iOS/Android, `MainView` is used directly as the application root. All new views should be built as `UserControl` subclasses so they compose on both desktop and mobile.
 
 **Avalonia data validation:** The `App` disables Avalonia's built-in `DataAnnotationsValidationPlugin` to avoid conflicts with CommunityToolkit.Mvvm's validation.
 
@@ -45,3 +52,6 @@ The shared `App` class (`App.axaml.cs`) branches on the application lifetime:
 - Avalonia 11.2.7 with Fluent theme and Inter font
 - CommunityToolkit.Mvvm 8.3.2 (source generators for MVVM)
 - .NET 8 with nullable enabled and latest C# lang version
+
+### Debugging
+Press **F12** while the desktop app is running to open the Avalonia DevTools overlay (included in Debug builds only via conditional `PackageReference`).
