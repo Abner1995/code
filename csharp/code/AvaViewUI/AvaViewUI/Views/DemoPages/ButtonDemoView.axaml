@@ -7,14 +7,14 @@
 
     <StackPanel Margin="16" Spacing="16">
         <WrapPanel>
-            <Button Content="Default" />
-            <Button Content="Primary" Classes="Primary" />
-            <Button Content="Secondary" Classes="Secondary" />
-            <Button Content="Tertiary" Classes="Tertiary" />
-            <Button Content="Success" Classes="Success" />
-            <Button Content="Warning" Classes="Warning" />
-            <Button Content="Danger" Classes="Danger" />
-            <Button Content="Disabled" Classes="Danger" IsEnabled="False" />
+            <Button Margin="4" Content="Default" />
+            <Button Margin="4" Content="Primary" Classes="Primary" />
+            <Button Margin="4" Content="Secondary" Classes="Secondary" />
+            <Button Margin="4" Content="Tertiary" Classes="Tertiary" />
+            <Button Margin="4" Content="Success" Classes="Success" />
+            <Button Margin="4" Content="Warning" Classes="Warning" />
+            <Button Margin="4" Content="Danger" Classes="Danger" />
+            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" />
         </WrapPanel>
     </StackPanel>
 

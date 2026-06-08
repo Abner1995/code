@@ -1,0 +1,91 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ==================== Color 定义（原始色值） ==================== -->
+
+    <!-- Blue -->
+    <Color x:Key="AvaBlue2Color">#98CDFD</Color>
+    <Color x:Key="AvaBlue5Color">#0064FA</Color>
+    <Color x:Key="AvaBlue6Color">#0062D6</Color>
+    <Color x:Key="AvaBlue7Color">#004FB3</Color>
+
+    <!-- LightBlue -->
+    <Color x:Key="AvaLightBlue2Color">#95D8F8</Color>
+    <Color x:Key="AvaLightBlue5Color">#0095EE</Color>
+    <Color x:Key="AvaLightBlue6Color">#007BCA</Color>
+    <Color x:Key="AvaLightBlue7Color">#0063A7</Color>
+
+    <!-- Green -->
+    <Color x:Key="AvaGreen2Color">#A4E0A7</Color>
+    <Color x:Key="AvaGreen5Color">#3BB346</Color>
+    <Color x:Key="AvaGreen6Color">#30953B</Color>
+    <Color x:Key="AvaGreen7Color">#25772F</Color>
+
+    <!-- Orange -->
+    <Color x:Key="AvaOrange5Color">#FC8800</Color>
+    <Color x:Key="AvaOrange6Color">#D26700</Color>
+    <Color x:Key="AvaOrange7Color">#A84A00</Color>
+
+    <!-- Red -->
+    <Color x:Key="AvaRed5Color">#F93920</Color>
+    <Color x:Key="AvaRed6Color">#D52515</Color>
+    <Color x:Key="AvaRed7Color">#B2140C</Color>
+
+    <!-- Grey -->
+    <Color x:Key="AvaGrey1Color">#E6E8EA</Color>
+    <Color x:Key="AvaGrey5Color">#6B7075</Color>
+    <Color x:Key="AvaGrey6Color">#555B61</Color>
+    <Color x:Key="AvaGrey7Color">#41464C</Color>
+    <Color x:Key="AvaGrey8Color">#2E3238</Color>
+    <Color x:Key="AvaGrey9Color">#1C1F23</Color>
+
+    <!-- ==================== 语义 Brush（按用途引用 Color） ==================== -->
+
+    <!-- Primary -->
+    <SolidColorBrush x:Key="AvaColorPrimary" Color="{StaticResource AvaBlue5Color}" />
+    <SolidColorBrush x:Key="AvaColorPrimaryHover" Color="{StaticResource AvaBlue6Color}" />
+    <SolidColorBrush x:Key="AvaColorPrimaryPressed" Color="{StaticResource AvaBlue7Color}" />
+    <SolidColorBrush x:Key="AvaColorPrimaryDisabled" Color="{StaticResource AvaBlue2Color}" />
+
+    <!-- Secondary -->
+    <SolidColorBrush x:Key="AvaColorSecondary" Color="{StaticResource AvaLightBlue5Color}" />
+    <SolidColorBrush x:Key="AvaColorSecondaryHover" Color="{StaticResource AvaLightBlue6Color}" />
+    <SolidColorBrush x:Key="AvaColorSecondaryPressed" Color="{StaticResource AvaLightBlue7Color}" />
+    <SolidColorBrush x:Key="AvaColorSecondaryDisabled" Color="{StaticResource AvaLightBlue2Color}" />
+
+    <!-- Tertiary -->
+    <SolidColorBrush x:Key="AvaColorTertiary" Color="{StaticResource AvaGrey5Color}" />
+    <SolidColorBrush x:Key="AvaColorTertiaryHover" Color="{StaticResource AvaGrey6Color}" />
+    <SolidColorBrush x:Key="AvaColorTertiaryPressed" Color="{StaticResource AvaGrey7Color}" />
+
+    <!-- Success -->
+    <SolidColorBrush x:Key="AvaColorSuccess" Color="{StaticResource AvaGreen5Color}" />
+    <SolidColorBrush x:Key="AvaColorSuccessHover" Color="{StaticResource AvaGreen6Color}" />
+    <SolidColorBrush x:Key="AvaColorSuccessPressed" Color="{StaticResource AvaGreen7Color}" />
+    <SolidColorBrush x:Key="AvaColorSuccessDisabled" Color="{StaticResource AvaGreen2Color}" />
+
+    <!-- Warning -->
+    <SolidColorBrush x:Key="AvaColorWarning" Color="{StaticResource AvaOrange5Color}" />
+    <SolidColorBrush x:Key="AvaColorWarningHover" Color="{StaticResource AvaOrange6Color}" />
+    <SolidColorBrush x:Key="AvaColorWarningPressed" Color="{StaticResource AvaOrange7Color}" />
+
+    <!-- Danger -->
+    <SolidColorBrush x:Key="AvaColorDanger" Color="{StaticResource AvaRed5Color}" />
+    <SolidColorBrush x:Key="AvaColorDangerHover" Color="{StaticResource AvaRed6Color}" />
+    <SolidColorBrush x:Key="AvaColorDangerPressed" Color="{StaticResource AvaRed7Color}" />
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="AvaTextColorPrimary" Opacity="0.8" Color="{StaticResource AvaGrey9Color}" />
+    <SolidColorBrush x:Key="AvaTextColorSecondary" Opacity="0.62" Color="{StaticResource AvaGrey9Color}" />
+    <SolidColorBrush x:Key="AvaTextColorDisabled" Opacity="0.35" Color="{StaticResource AvaGrey9Color}" />
+
+    <!-- Fill -->
+    <SolidColorBrush x:Key="AvaFillColor0" Opacity="0.05" Color="{StaticResource AvaGrey8Color}" />
+    <SolidColorBrush x:Key="AvaFillColor1" Opacity="0.09" Color="{StaticResource AvaGrey8Color}" />
+    <SolidColorBrush x:Key="AvaFillColor2" Opacity="0.13" Color="{StaticResource AvaGrey8Color}" />
+
+    <!-- Border & Misc -->
+    <SolidColorBrush x:Key="AvaBorderColor" Opacity="0.08" Color="{StaticResource AvaGrey9Color}" />
+    <SolidColorBrush x:Key="AvaDisabledBackgroundColor" Color="{StaticResource AvaGrey1Color}" />
+
+</ResourceDictionary>
