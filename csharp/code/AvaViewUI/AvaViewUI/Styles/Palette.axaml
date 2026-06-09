@@ -85,6 +85,7 @@
     <SolidColorBrush x:Key="AvaFillColor2" Opacity="0.13" Color="{StaticResource AvaGrey8Color}" />
 
     <!-- Border & Misc -->
+    <SolidColorBrush x:Key="AvaColorWhite" Color="White" />
     <SolidColorBrush x:Key="AvaBorderColor" Opacity="0.08" Color="{StaticResource AvaGrey9Color}" />
     <SolidColorBrush x:Key="AvaDisabledBackgroundColor" Color="{StaticResource AvaGrey1Color}" />
 

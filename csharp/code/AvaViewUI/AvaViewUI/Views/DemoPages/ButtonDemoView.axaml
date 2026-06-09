@@ -16,6 +16,17 @@
             <Button Margin="4" Content="Danger" Classes="Danger" />
             <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" />
         </WrapPanel>
+
+        <WrapPanel>
+            <Button Margin="4" Content="Default" Theme="{DynamicResource SolidButton}" />
+            <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource SolidButton}" />
+            <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource SolidButton}" />
+            <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource SolidButton}" />
+            <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource SolidButton}" />
+            <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource SolidButton}" />
+            <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource SolidButton}" />
+            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource SolidButton}" />
+        </WrapPanel>
     </StackPanel>
 
 </UserControl>

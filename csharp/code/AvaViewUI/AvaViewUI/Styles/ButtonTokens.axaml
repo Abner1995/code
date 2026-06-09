@@ -31,4 +31,76 @@
     <Thickness x:Key="ButtonBorderThickness">1</Thickness>
     <CornerRadius x:Key="ButtonCornerRadius">3</CornerRadius>
 
+    <!-- ========== Solid 主题 ========== -->
+
+    <!-- 通用 -->
+    <StaticResource x:Key="ButtonSolidForeground" ResourceKey="AvaColorWhite" />
+    <StaticResource x:Key="ButtonSolidDisabledForeground" ResourceKey="AvaTextColorDisabled" />
+    <StaticResource x:Key="ButtonSolidDisabledBackground" ResourceKey="AvaDisabledBackgroundColor" />
+    <SolidColorBrush x:Key="ButtonSolidDisabledBorderBrush" Color="Transparent" />
+
+    <!-- Primary -->
+    <StaticResource x:Key="ButtonSolidPrimaryBackground" ResourceKey="AvaColorPrimary" />
+    <StaticResource x:Key="ButtonSolidPrimaryBorderBrush" ResourceKey="AvaColorPrimary" />
+    <StaticResource x:Key="ButtonSolidPrimaryPointeroverBackground" ResourceKey="AvaColorPrimaryHover" />
+    <StaticResource x:Key="ButtonSolidPrimaryPointeroverBorderBrush" ResourceKey="AvaColorPrimaryHover" />
+    <StaticResource x:Key="ButtonSolidPrimaryPressedForeground" ResourceKey="AvaColorWhite" />
+    <StaticResource x:Key="ButtonSolidPrimaryPressedBackground" ResourceKey="AvaColorPrimaryPressed" />
+    <StaticResource x:Key="ButtonSolidPrimaryPressedBorderBrush" ResourceKey="AvaColorPrimaryPressed" />
+
+    <!-- Secondary -->
+    <StaticResource x:Key="ButtonSolidSecondaryBackground" ResourceKey="AvaColorSecondary" />
+    <StaticResource x:Key="ButtonSolidSecondaryBorderBrush" ResourceKey="AvaColorSecondary" />
+    <StaticResource x:Key="ButtonSolidSecondaryPointeroverBackground" ResourceKey="AvaColorSecondaryHover" />
+    <StaticResource x:Key="ButtonSolidSecondaryPointeroverBorderBrush" ResourceKey="AvaColorSecondaryHover" />
+    <StaticResource x:Key="ButtonSolidSecondaryPressedBackground" ResourceKey="AvaColorSecondaryPressed" />
+    <StaticResource x:Key="ButtonSolidSecondaryPressedBorderBrush" ResourceKey="AvaColorSecondaryPressed" />
+
+    <!-- Tertiary -->
+    <StaticResource x:Key="ButtonSolidTertiaryBackground" ResourceKey="AvaColorTertiary" />
+    <StaticResource x:Key="ButtonSolidTertiaryBorderBrush" ResourceKey="AvaColorTertiary" />
+    <StaticResource x:Key="ButtonSolidTertiaryPointeroverBackground" ResourceKey="AvaColorTertiaryHover" />
+    <StaticResource x:Key="ButtonSolidTertiaryPointeroverBorderBrush" ResourceKey="AvaColorTertiaryHover" />
+    <StaticResource x:Key="ButtonSolidTertiaryPressedBackground" ResourceKey="AvaColorTertiaryPressed" />
+    <StaticResource x:Key="ButtonSolidTertiaryPressedBorderBrush" ResourceKey="AvaColorTertiaryPressed" />
+
+    <!-- Success -->
+    <StaticResource x:Key="ButtonSolidSuccessBackground" ResourceKey="AvaColorSuccess" />
+    <StaticResource x:Key="ButtonSolidSuccessBorderBrush" ResourceKey="AvaColorSuccess" />
+    <StaticResource x:Key="ButtonSolidSuccessPointeroverBackground" ResourceKey="AvaColorSuccessHover" />
+    <StaticResource x:Key="ButtonSolidSuccessPointeroverBorderBrush" ResourceKey="AvaColorSuccessHover" />
+    <StaticResource x:Key="ButtonSolidSuccessPressedBackground" ResourceKey="AvaColorSuccessPressed" />
+    <StaticResource x:Key="ButtonSolidSuccessPressedBorderBrush" ResourceKey="AvaColorSuccessPressed" />
+
+    <!-- Warning -->
+    <StaticResource x:Key="ButtonSolidWarningBackground" ResourceKey="AvaColorWarning" />
+    <StaticResource x:Key="ButtonSolidWarningBorderBrush" ResourceKey="AvaColorWarning" />
+    <StaticResource x:Key="ButtonSolidWarningPointeroverBackground" ResourceKey="AvaColorWarningHover" />
+    <StaticResource x:Key="ButtonSolidWarningPointeroverBorderBrush" ResourceKey="AvaColorWarningHover" />
+    <StaticResource x:Key="ButtonSolidWarningPressedBackground" ResourceKey="AvaColorWarningPressed" />
+    <StaticResource x:Key="ButtonSolidWarningPressedBorderBrush" ResourceKey="AvaColorWarningPressed" />
+
+    <!-- Danger -->
+    <StaticResource x:Key="ButtonSolidDangerBackground" ResourceKey="AvaColorDanger" />
+    <StaticResource x:Key="ButtonSolidDangerBorderBrush" ResourceKey="AvaColorDanger" />
+    <StaticResource x:Key="ButtonSolidDangerPointeroverBackground" ResourceKey="AvaColorDangerHover" />
+    <StaticResource x:Key="ButtonSolidDangerPointeroverBorderBrush" ResourceKey="AvaColorDangerHover" />
+    <StaticResource x:Key="ButtonSolidDangerPressedBackground" ResourceKey="AvaColorDangerPressed" />
+    <StaticResource x:Key="ButtonSolidDangerPressedBorderBrush" ResourceKey="AvaColorDangerPressed" />
+
+    <!-- ========== Outline 主题 ========== -->
+
+    <SolidColorBrush x:Key="ButtonOutlineBackground" Color="Transparent" />
+    <StaticResource x:Key="ButtonOutlineBorderBrush" ResourceKey="AvaBorderColor" />
+    <StaticResource x:Key="ButtonOutlinePointeroverBackground" ResourceKey="AvaFillColor1" />
+    <StaticResource x:Key="ButtonOutlinePressedBackground" ResourceKey="AvaFillColor2" />
+    <StaticResource x:Key="ButtonOutlineSuccessBorderBrush" ResourceKey="AvaColorSuccess" />
+    <StaticResource x:Key="ButtonOutlineWarningBorderBrush" ResourceKey="AvaColorWarning" />
+    <StaticResource x:Key="ButtonOutlineDangerBorderBrush" ResourceKey="AvaColorDanger" />
+
+    <!-- ========== Borderless 主题 ========== -->
+
+    <SolidColorBrush x:Key="ButtonBorderlessBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="ButtonBorderlessBorderBrush" Color="Transparent" />
+
 </ResourceDictionary>
