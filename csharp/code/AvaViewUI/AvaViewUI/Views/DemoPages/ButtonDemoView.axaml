@@ -6,6 +6,26 @@
              x:Class="AvaViewUI.Views.DemoPages.ButtonDemoView">
 
     <StackPanel Margin="16" Spacing="16">
+        <TextBlock Margin="4" Text="Button/RepeatButton Theme" />
+
+        <WrapPanel>
+            <TextBlock Margin="4" Text="Theme:" />
+            <TextBlock Margin="4" Text="Light" />
+            <TextBlock Margin="4" Text="Solid" />
+            <TextBlock Margin="4" Text="Outline" />
+            <TextBlock Margin="4" Text="Borderless" />
+        </WrapPanel> 
+
+        <WrapPanel>
+            <TextBlock Margin="4" Text="Classes:" />
+            <TextBlock Margin="4" Text="Primary" Foreground="{DynamicResource ButtonDefaultPrimaryForeground}" />
+            <TextBlock Margin="4" Text="Secondary" Foreground="{DynamicResource ButtonDefaultSecondaryForeground}" />
+            <TextBlock Margin="4" Text="Tertiary" Foreground="{DynamicResource ButtonDefaultTertiaryForeground}" />
+            <TextBlock Margin="4" Text="Success" Foreground="{DynamicResource ButtonDefaultSuccessForeground}" />
+            <TextBlock Margin="4" Text="Warning" Foreground="{DynamicResource ButtonDefaultWarningForeground}" />
+            <TextBlock Margin="4" Text="Danger" Foreground="{DynamicResource ButtonDefaultDangerForeground}" />
+        </WrapPanel> 
+
         <WrapPanel>
             <Button Margin="4" Content="Default" />
             <Button Margin="4" Content="Primary" Classes="Primary" />
@@ -27,6 +47,38 @@
             <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource SolidButton}" />
             <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource SolidButton}" />
         </WrapPanel>
+
+        <WrapPanel>
+            <Button Margin="4" Content="Default" Theme="{DynamicResource OutlineButton}" />
+            <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource OutlineButton}" />
+            <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource OutlineButton}" />
+            <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource OutlineButton}" />
+            <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource OutlineButton}" />
+            <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource OutlineButton}" />
+            <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource OutlineButton}" />
+            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource OutlineButton}" />
+        </WrapPanel>
+
+        <WrapPanel>
+            <Button Margin="4" Content="Default" Theme="{DynamicResource BorderlessButton}" />
+            <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource BorderlessButton}" />
+            <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource BorderlessButton}" />
+            <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource BorderlessButton}" />
+            <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource BorderlessButton}" />
+            <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource BorderlessButton}" />
+            <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource BorderlessButton}" />
+            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource BorderlessButton}" />
+        </WrapPanel>
+
+        <TextBlock Text="Prohibited Status" />
+
+        <WrapPanel>
+            <Button Margin="4" Content="Light" IsEnabled="False" />
+            <Button Margin="4" Content="Solid" IsEnabled="False" Theme="{StaticResource SolidButton}" />
+            <Button Margin="4" Content="Outline" IsEnabled="False" Theme="{StaticResource OutlineButton}" />
+            <Button Margin="4" Content="Borderless" IsEnabled="False" Theme="{StaticResource BorderlessButton}" />
+        </WrapPanel>
+
     </StackPanel>
 
 </UserControl>
