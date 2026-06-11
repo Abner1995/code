@@ -39,6 +39,16 @@
     <Color x:Key="AvaGrey8Color">#2E3238</Color>
     <Color x:Key="AvaGrey9Color">#1C1F23</Color>
 
+    <Color x:Key="AvaAIPurple1Color">#F2DAFF</Color>
+    <Color x:Key="AvaAIPurple2Color">#E3B5FF</Color>
+    <Color x:Key="AvaAIPurple3Color">#D191FF</Color>
+    <Color x:Key="AvaAIPurple4Color">#BD6CFF</Color>
+    <Color x:Key="AvaAIPurple5Color">#A647FF</Color>
+    <Color x:Key="AvaAIPurple6Color">#8636DB</Color>
+    <Color x:Key="AvaAIPurple7Color">#6928B8</Color>
+    <Color x:Key="AvaAIPurple8Color">#4E1C94</Color>
+    <Color x:Key="AvaAIPurple9Color">#361270</Color>
+
     <!-- ==================== 语义 Brush（按用途引用 Color） ==================== -->
 
     <!-- Primary -->
@@ -88,5 +98,56 @@
     <SolidColorBrush x:Key="AvaColorWhite" Color="White" />
     <SolidColorBrush x:Key="AvaBorderColor" Opacity="0.08" Color="{StaticResource AvaGrey9Color}" />
     <SolidColorBrush x:Key="AvaDisabledBackgroundColor" Color="{StaticResource AvaGrey1Color}" />
+
+    <!-- AI General：紫→蓝 45° 对角渐变背景（Solid Primary / 彩色前景） -->
+    <LinearGradientBrush x:Key="AvaColorAIGeneral" StartPoint="99%,93%" EndPoint="1%,7%">
+        <GradientStop Offset="0.0" Color="#E945FF" />   <!-- 粉紫 -->
+        <GradientStop Offset="0.3" Color="#A647FF" />   <!-- 蓝紫 -->
+        <GradientStop Offset="0.6" Color="#6B61FF" />   <!-- 紫蓝 -->
+        <GradientStop Offset="1.0" Color="#2E8CFF" />   <!-- 亮蓝 -->
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvaColorAIGeneralPointerover" StartPoint="99%,93%" EndPoint="1%,7%">
+        <GradientStop Offset="0.0" Color="#C235DB" />
+        <GradientStop Offset="0.3" Color="#8636DB" />
+        <GradientStop Offset="0.6" Color="#584DDB" />
+        <GradientStop Offset="1.0" Color="#2172DB" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvaColorAIGeneralActive" StartPoint="99%,93%" EndPoint="1%,7%">
+        <GradientStop Offset="0.0" Color="#9D27B8" />
+        <GradientStop Offset="0.3" Color="#6928B8" />
+        <GradientStop Offset="0.6" Color="#473BB8" />
+        <GradientStop Offset="1.0" Color="#1659B8" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvaColorAIGeneralDisabled" StartPoint="99%,93%" EndPoint="1%,7%">
+        <GradientStop Offset="0.0" Color="#FEB5FF" />
+        <GradientStop Offset="0.3" Color="#E3B5FF" />
+        <GradientStop Offset="0.6" Color="#C1C0FF" />
+        <GradientStop Offset="1.0" Color="#ABD5FF" />
+    </LinearGradientBrush>
+
+    <!-- AI Purple -->
+    <SolidColorBrush x:Key="AvaColorAIPurple" Color="{StaticResource AvaAIPurple5Color}" />
+    <SolidColorBrush x:Key="AvaColorAIPurplePointerover" Color="{StaticResource AvaAIPurple6Color}" />
+    <SolidColorBrush x:Key="AvaColorAIPurpleActive" Color="{StaticResource AvaAIPurple7Color}" />
+    <SolidColorBrush x:Key="AvaColorAIPurpleDisabled" Color="{StaticResource AvaAIPurple2Color}" />
+
+    <LinearGradientBrush x:Key="AvaAIGeneral0" StartPoint="99%,93%" EndPoint="1%,7%">
+        <GradientStop Offset="0.0" Color="#FFF2FF" />
+        <GradientStop Offset="0.3" Color="#F8EDFF" />
+        <GradientStop Offset="0.6" Color="#F4F4FF" />
+        <GradientStop Offset="1.0" Color="#EFF7FF" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvaAIGeneral1" StartPoint="99%,93%" EndPoint="1%,7%">
+        <GradientStop Offset="0.0" Color="#FFDAFE" />
+        <GradientStop Offset="0.3" Color="#F2DAFF" />
+        <GradientStop Offset="0.6" Color="#DFE0FF" />
+        <GradientStop Offset="1.0" Color="#D5EBFF" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AvaAIGeneral2" StartPoint="99%,93%" EndPoint="1%,7%">
+        <GradientStop Offset="0.0" Color="#FEB5FF" />
+        <GradientStop Offset="0.3" Color="#E3B5FF" />
+        <GradientStop Offset="0.6" Color="#C1C0FF" />
+        <GradientStop Offset="1.0" Color="#ABD5FF" />
+    </LinearGradientBrush>
 
 </ResourceDictionary>

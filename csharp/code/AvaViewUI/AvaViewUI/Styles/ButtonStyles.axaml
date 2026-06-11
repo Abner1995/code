@@ -62,6 +62,11 @@
             <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultDangerForeground}" />
         </Style>
 
+        <Style Selector="^.Colorful">
+            <Style Selector="^.Primary /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultColorfulPrimaryForeground}" />
+            </Style>
+        </Style>
 
         <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ButtonDefaultPointeroverBackground}" />
@@ -76,6 +81,15 @@
         <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultDisabledForeground}" />
             <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultDisabledBorderBrush}" />
+        </Style>
+
+        <Style Selector="^.Large">
+            <Setter Property="MinHeight" Value="{DynamicResource ButtonLargeHeight}" />
+            <Setter Property="Padding" Value="{DynamicResource ButtonLargePadding}" />
+        </Style>
+        <Style Selector="^.Small">
+            <Setter Property="MinHeight" Value="{DynamicResource ButtonSmallHeight}" />
+            <Setter Property="Padding" Value="{DynamicResource ButtonSmallPadding}" />
         </Style>
 
     </ControlTheme>

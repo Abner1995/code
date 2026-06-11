@@ -2,83 +2,151 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="800" 
              x:Class="AvaViewUI.Views.DemoPages.ButtonDemoView">
 
-    <StackPanel Margin="16" Spacing="16">
-        <TextBlock Margin="4" Text="Button/RepeatButton Theme" />
+    <ScrollViewer>
+    
+        <StackPanel Margin="16" Spacing="16">
+            <StackPanel.Styles>
+                <Style Selector="SplitButton,DropDownButton,ToggleSplitButton">
+                    <Setter Property="Button.Flyout">
+                        <MenuFlyout>
+                            <MenuItem Header="Submit All" />
+                            <MenuItem Header="Submit Updated" />
+                        </MenuFlyout>
+                    </Setter>
+                </Style>
+            </StackPanel.Styles>
 
-        <WrapPanel>
-            <TextBlock Margin="4" Text="Theme:" />
-            <TextBlock Margin="4" Text="Light" />
-            <TextBlock Margin="4" Text="Solid" />
-            <TextBlock Margin="4" Text="Outline" />
-            <TextBlock Margin="4" Text="Borderless" />
-        </WrapPanel> 
+            <TextBlock Margin="4" Text="Button/RepeatButton Theme" />
 
-        <WrapPanel>
-            <TextBlock Margin="4" Text="Classes:" />
-            <TextBlock Margin="4" Text="Primary" Foreground="{DynamicResource ButtonDefaultPrimaryForeground}" />
-            <TextBlock Margin="4" Text="Secondary" Foreground="{DynamicResource ButtonDefaultSecondaryForeground}" />
-            <TextBlock Margin="4" Text="Tertiary" Foreground="{DynamicResource ButtonDefaultTertiaryForeground}" />
-            <TextBlock Margin="4" Text="Success" Foreground="{DynamicResource ButtonDefaultSuccessForeground}" />
-            <TextBlock Margin="4" Text="Warning" Foreground="{DynamicResource ButtonDefaultWarningForeground}" />
-            <TextBlock Margin="4" Text="Danger" Foreground="{DynamicResource ButtonDefaultDangerForeground}" />
-        </WrapPanel> 
+            <WrapPanel>
+                <TextBlock Margin="4" Text="Theme:" />
+                <TextBlock Margin="4" Text="Light" />
+                <TextBlock Margin="4" Text="Solid" />
+                <TextBlock Margin="4" Text="Outline" />
+                <TextBlock Margin="4" Text="Borderless" />
+            </WrapPanel> 
 
-        <WrapPanel>
-            <Button Margin="4" Content="Default" />
-            <Button Margin="4" Content="Primary" Classes="Primary" />
-            <Button Margin="4" Content="Secondary" Classes="Secondary" />
-            <Button Margin="4" Content="Tertiary" Classes="Tertiary" />
-            <Button Margin="4" Content="Success" Classes="Success" />
-            <Button Margin="4" Content="Warning" Classes="Warning" />
-            <Button Margin="4" Content="Danger" Classes="Danger" />
-            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" />
-        </WrapPanel>
+            <WrapPanel>
+                <TextBlock Margin="4" Text="Classes:" />
+                <TextBlock Margin="4" Text="Primary" Foreground="{DynamicResource ButtonDefaultPrimaryForeground}" />
+                <TextBlock Margin="4" Text="Secondary" Foreground="{DynamicResource ButtonDefaultSecondaryForeground}" />
+                <TextBlock Margin="4" Text="Tertiary" Foreground="{DynamicResource ButtonDefaultTertiaryForeground}" />
+                <TextBlock Margin="4" Text="Success" Foreground="{DynamicResource ButtonDefaultSuccessForeground}" />
+                <TextBlock Margin="4" Text="Warning" Foreground="{DynamicResource ButtonDefaultWarningForeground}" />
+                <TextBlock Margin="4" Text="Danger" Foreground="{DynamicResource ButtonDefaultDangerForeground}" />
+            </WrapPanel> 
 
-        <WrapPanel>
-            <Button Margin="4" Content="Default" Theme="{DynamicResource SolidButton}" />
-            <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource SolidButton}" />
-            <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource SolidButton}" />
-            <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource SolidButton}" />
-            <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource SolidButton}" />
-            <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource SolidButton}" />
-            <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource SolidButton}" />
-            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource SolidButton}" />
-        </WrapPanel>
+            <WrapPanel>
+                <Button Margin="4" Content="Default" />
+                <Button Margin="4" Content="Primary" Classes="Primary" />
+                <Button Margin="4" Content="Secondary" Classes="Secondary" />
+                <Button Margin="4" Content="Tertiary" Classes="Tertiary" />
+                <Button Margin="4" Content="Success" Classes="Success" />
+                <Button Margin="4" Content="Warning" Classes="Warning" />
+                <Button Margin="4" Content="Danger" Classes="Danger" />
+                <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" />
+            </WrapPanel>
 
-        <WrapPanel>
-            <Button Margin="4" Content="Default" Theme="{DynamicResource OutlineButton}" />
-            <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource OutlineButton}" />
-            <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource OutlineButton}" />
-            <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource OutlineButton}" />
-            <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource OutlineButton}" />
-            <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource OutlineButton}" />
-            <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource OutlineButton}" />
-            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource OutlineButton}" />
-        </WrapPanel>
+            <WrapPanel>
+                <Button Margin="4" Content="Default" Theme="{DynamicResource SolidButton}" />
+                <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource SolidButton}" />
+                <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource SolidButton}" />
+                <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource SolidButton}" />
+                <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource SolidButton}" />
+                <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource SolidButton}" />
+                <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource SolidButton}" />
+                <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource SolidButton}" />
+            </WrapPanel>
 
-        <WrapPanel>
-            <Button Margin="4" Content="Default" Theme="{DynamicResource BorderlessButton}" />
-            <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource BorderlessButton}" />
-            <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource BorderlessButton}" />
-            <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource BorderlessButton}" />
-            <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource BorderlessButton}" />
-            <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource BorderlessButton}" />
-            <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource BorderlessButton}" />
-            <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource BorderlessButton}" />
-        </WrapPanel>
+            <WrapPanel>
+                <Button Margin="4" Content="Default" Theme="{DynamicResource OutlineButton}" />
+                <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource OutlineButton}" />
+                <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource OutlineButton}" />
+                <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource OutlineButton}" />
+                <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource OutlineButton}" />
+                <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource OutlineButton}" />
+                <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource OutlineButton}" />
+                <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource OutlineButton}" />
+            </WrapPanel>
 
-        <TextBlock Text="Prohibited Status" />
+            <WrapPanel>
+                <Button Margin="4" Content="Default" Theme="{DynamicResource BorderlessButton}" />
+                <Button Margin="4" Content="Primary" Classes="Primary" Theme="{DynamicResource BorderlessButton}" />
+                <Button Margin="4" Content="Secondary" Classes="Secondary" Theme="{DynamicResource BorderlessButton}" />
+                <Button Margin="4" Content="Tertiary" Classes="Tertiary" Theme="{DynamicResource BorderlessButton}" />
+                <Button Margin="4" Content="Success" Classes="Success" Theme="{DynamicResource BorderlessButton}" />
+                <Button Margin="4" Content="Warning" Classes="Warning" Theme="{DynamicResource BorderlessButton}" />
+                <Button Margin="4" Content="Danger" Classes="Danger" Theme="{DynamicResource BorderlessButton}" />
+                <Button Margin="4" Content="Disabled" Classes="Danger" IsEnabled="False" Theme="{DynamicResource BorderlessButton}" />
+            </WrapPanel>
 
-        <WrapPanel>
-            <Button Margin="4" Content="Light" IsEnabled="False" />
-            <Button Margin="4" Content="Solid" IsEnabled="False" Theme="{StaticResource SolidButton}" />
-            <Button Margin="4" Content="Outline" IsEnabled="False" Theme="{StaticResource OutlineButton}" />
-            <Button Margin="4" Content="Borderless" IsEnabled="False" Theme="{StaticResource BorderlessButton}" />
-        </WrapPanel>
+            <TextBlock Text="Prohibited Status" />
 
-    </StackPanel>
+            <WrapPanel>
+                <Button Margin="4" Content="Light" IsEnabled="False" />
+                <Button Margin="4" Content="Solid" IsEnabled="False" Theme="{StaticResource SolidButton}" />
+                <Button Margin="4" Content="Outline" IsEnabled="False" Theme="{StaticResource OutlineButton}" />
+                <Button Margin="4" Content="Borderless" IsEnabled="False" Theme="{StaticResource BorderlessButton}" />
+            </WrapPanel>
 
+            <TextBlock Text="Size Classes: Large Small" />
+
+            <WrapPanel>
+                <Button Margin="4" Content="Large" Classes="Large" />
+                <Button Margin="4" Content="Default" />
+                <Button Margin="4" Content="Small" Classes="Small" />
+            </WrapPanel>
+
+            <TextBlock Margin="4" Text="AI style - Colorful Button" />
+
+            <WrapPanel>
+                <TextBlock Margin="4" Text="Theme:" />
+                <TextBlock Margin="4" Text="Light" />
+                <TextBlock Margin="4" Text="Solid" />
+                <TextBlock Margin="4" Text="Outline" />
+                <TextBlock Margin="4" Text="Borderless" />
+            </WrapPanel> 
+
+            <WrapPanel>
+                <TextBlock Margin="4" Text="Classes:" />
+                <TextBlock Margin="4" Text="Colorful Primary" Foreground="{DynamicResource ButtonDefaultPrimaryForeground}" />
+                <TextBlock Margin="4" Text="Colorful Tertiary" Foreground="{DynamicResource ButtonDefaultTertiaryForeground}" />
+            </WrapPanel> 
+
+            <WrapPanel>
+                <Button Margin="4" Content="Primary" Classes="Colorful Primary" />
+                <Button Margin="4" Content="Tertiary" Classes="Colorful Tertiary" />
+                <Button Margin="4" Content="Disabled" Classes="Colorful Primary" IsEnabled="False" />
+            </WrapPanel>
+
+            <WrapPanel >
+                <Button Margin="4" Content="Primary" Classes="Colorful Primary" Theme="{StaticResource SolidButton}" />
+                <Button Margin="4" Content="Tertiary" Classes="Colorful Tertiary" Theme="{StaticResource SolidButton}" />
+                <Button Margin="4" Content="Disabled" Classes="Colorful Primary" Theme="{StaticResource SolidButton}" IsEnabled="False" />
+            </WrapPanel>
+            <WrapPanel >
+                <Button Margin="4" Content="Primary" Classes="Colorful Primary" Theme="{StaticResource OutlineButton}" />
+                <Button Margin="4" Content="Tertiary" Classes="Colorful Tertiary" Theme="{StaticResource OutlineButton}" />
+                <Button Margin="4" Content="Disabled" Classes="Colorful Primary" Theme="{StaticResource OutlineButton}" IsEnabled="False" />
+            </WrapPanel>
+            <WrapPanel >
+                <Button Margin="4" Content="Primary" Classes="Colorful Primary" Theme="{StaticResource BorderlessButton}" />
+                <Button Margin="4" Content="Tertiary" Classes="Colorful Tertiary" Theme="{StaticResource BorderlessButton}" />
+                <Button Margin="4" Content="Disabled" Classes="Colorful Primary" Theme="{StaticResource BorderlessButton}" IsEnabled="False" />
+            </WrapPanel>
+
+            <TextBlock Margin="4" Text="DropDownButton" />
+
+            <WrapPanel>
+                <DropDownButton Margin="4" Content="Primary" />
+                <DropDownButton Margin="4" Content="Tertiary" />
+                <DropDownButton Margin="4" Content="Disabled" IsEnabled="False" />
+            </WrapPanel>
+
+        </StackPanel>
+
+    </ScrollViewer>
 </UserControl>

@@ -30,6 +30,10 @@
     <Thickness x:Key="ButtonDefaultPadding">12 0</Thickness>
     <Thickness x:Key="ButtonBorderThickness">1</Thickness>
     <CornerRadius x:Key="ButtonCornerRadius">3</CornerRadius>
+    <x:Double x:Key="ButtonLargeHeight">40</x:Double>
+    <Thickness x:Key="ButtonLargePadding">16 0</Thickness>
+    <x:Double x:Key="ButtonSmallHeight">24</x:Double>
+    <Thickness x:Key="ButtonSmallPadding">6 0</Thickness>
 
     <!-- ========== Solid 主题 ========== -->
 
@@ -102,5 +106,23 @@
 
     <SolidColorBrush x:Key="ButtonBorderlessBackground" Color="Transparent" />
     <SolidColorBrush x:Key="ButtonBorderlessBorderBrush" Color="Transparent" />
+
+    <!-- ========== Colorful Classes ========== -->
+
+    <!-- Default -->
+    <StaticResource x:Key="ButtonDefaultColorfulPrimaryForeground" ResourceKey="AvaColorAIGeneral" />
+
+    <!-- Solid -->
+    <StaticResource x:Key="ButtonSolidColorfulPrimaryBackground" ResourceKey="AvaColorAIGeneral" />
+    <StaticResource x:Key="ButtonSolidColorfulPrimaryPointeroverBackground" ResourceKey="AvaColorAIGeneralPointerover" />
+    <StaticResource x:Key="ButtonSolidColorfulPrimaryPressedBackground" ResourceKey="AvaColorAIGeneralActive" />
+    <StaticResource x:Key="ButtonSolidColorfulTertiaryForeground" ResourceKey="AvaColorAIGeneral" />
+    <StaticResource x:Key="ButtonSolidColorfulTertiaryBackground" ResourceKey="AvaAIGeneral0" />
+    <StaticResource x:Key="ButtonSolidColorfulTertiaryPointeroverBackground" ResourceKey="AvaAIGeneral1" />
+    <StaticResource x:Key="ButtonSolidColorfulTertiaryPressedBackground" ResourceKey="AvaAIGeneral2" />
+
+    <!-- Outline -->
+    <StaticResource x:Key="ButtonOutlineColorfulPrimaryForeground" ResourceKey="AvaColorAIPurple" />
+    <StaticResource x:Key="ButtonOutlineColorfulPrimaryBorderBrush" ResourceKey="AvaColorAIPurple" />
 
 </ResourceDictionary>
